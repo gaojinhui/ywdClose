@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>我的账户</title>
+	<link rel="stylesheet" href="/public/home/css/user.css" />
+	<link href="__USER__/css/home.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/usercommon.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="__LAY__/css/layui.css" media="all" />
+
+	<link href="__USER__/css/YLPopDiv.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/common.css" rel="stylesheet" type="text/css" />
+	<style>
+		.topnav a i{width:15px; height:15px; margin-right:5px; vertical-align: middle;}
+		.topnav label a{color:#16cbc0!important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto;}
+		.bh{ text-align: center}
+	</style>
+</head>
+<body style="background: #ffffff">
+
+<div class="title" style="margin: 10px;">
+	合同管理->合同查询
+</div>
+<hr class="layui-bg-gray">
+<div class="layui-inline">
+	<label class="layui-form-label">签订日期</label>
+	<div class="layui-input-inline">
+		<input type="text" class="layui-input" id="test15" placeholder=" ~ ">
+	</div>
+</div>
+<div class="layui-inline">
+	<button class="layui-btn layui-btn-danger">搜索</button>
+</div>
+<hr class="layui-bg-black">
+<div class="layui-block" style="padding: 0px 0 0 10px;">
+	<button class="layui-btn layui-bg-green" onclick="layui.addyear()" >新增年度合同</button>
+	<button class="layui-btn layui-btn-danger" onclick="layui.addday()">新增日常合同</button>
+	<button class="layui-btn layui-bg-cyan" onclick="layui.uploadht()">上传合同</button>
+</div>
+
+
+<div class="clear"></div>
+<div class="con">
+	<div class="tabtitle">
+		<div style="width: 20%">商品信息</div>
+		<div style="width: 20%">单位信息</div>
+		<div style="width: 20%">单价</div>
+		<div style="width: 20%">数量</div>
+		<div style="width: 10%">合同状态</div>
+		<div style="width: 10%">操作</div>
+	</div>
+	<ul id="biuuu_city_list"></ul>
+	<div id="demo20"></div>
+</div>
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','table','laypage'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate,
+			table = layui.table;
+        	laypage = layui.laypage;
+        	$ =layui.jquery;
+        //监听提交
+
+        //调用分页
+        $.post("/user/index/get_contract_con",function(data){
+            var list = data.data;
+            laypage.render({
+                elem: 'demo20'
+                ,count: list.length
+				,limit:5
+                ,layout: ['count', 'prev', 'page', 'next', 'limit', 'skip']
+                ,jump: function(obj){
+                    //模拟渲染
+                    document.getElementById('biuuu_city_list').innerHTML = function(){
+                        var arr = []
+                            ,thisData = list.concat().splice(obj.curr*obj.limit - obj.limit, obj.limit);
+                        layui.each(thisData, function(index, item){
+                            var str='<div class="tabcon"><div class="tabt"><div class="bh">企业合同编号:'+item.contract_id+'</div><div class="bh">采购方:'+item.buyer_compay+'</div>';
+                            str+='<div class="bh">签订日期:'+item.sign_date+'</div></div><div class="clear"></div>';
+                            str+='<div class="tabc"><div class="bh" style="width: 20%">商品名称：'+item.goods_name+'</div>';
+                            str+='<div class="bh" style="width: 20%"><div>发货单位：'+item.consignor+'</div><div>收货单位：'+item.consignee+'</div>';
+                            str+='</div><div class="bh" style="width: 20%">1月美金</div><div class="bh" style="width: 20%">'+item.quantity+'吨</div>';
+                            str+='<div class="bh" style="width: 10%">执行中</div><div class="bh" style="width: 10%">详情</div><div class="clear"></div></div></div>';
+                            arr.push(str);
+                        });
+                        return arr.join('');
+                    }();
+                }
+            });
+        });
+
+
+        laydate.render({
+            elem: '#test15'
+            ,type: 'datetime'
+            ,range: '~'
+            ,format:'yyyy/M/d'
+        });
+    }).define(function(exports){
+        exports('addday', function(){
+            layer.open({
+                type: 2,
+				title:'增加日常合同',
+                skin: 'layui-layer-lan',
+                skin: 'layui-layer-rim', //加上边框
+                area: ['100%', '100%']//宽高
+                ,anim: 2,
+                maxmin: true,
+                content: '/user/index/contract_add_day'
+
+            });
+        });
+        exports('addyear', function(){
+            layer.open({
+                type: 2,
+                title:'增加年度合同',
+                skin: 'layui-layer-lan',
+                skin: 'layui-layer-rim', //加上边框
+                area: ['100%', '100%']//宽高
+                ,anim: 2,
+                maxmin: true,
+                content: '/user/index/contract_add_year'
+
+            });
+        });
+        exports('uploadht', function(){
+            layer.open({
+                type: 2,
+                title:'增加年度合同',
+                skin: 'layui-layer-lan',
+                skin: 'layui-layer-rim', //加上边框
+                area: ['100%', '100%']//宽高
+                ,anim: 2,
+                maxmin: true,
+                content: '/user/cfile/uploadfile'
+
+
+            });
+        });
+    });
+</script>
+</body>
+</html>

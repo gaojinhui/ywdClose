@@ -1,0 +1,81 @@
+{include file="index/header";/}
+
+<div class="ct_baner"></div>
+<div class="content_jr">
+    <div class="cg_jr">
+        <div class="left_jr">
+            <div class="title_jr">
+                <ul>
+                    <li class="first tab" id="a1" >应收账款融资</li>
+                    <!--<li id="a2" onClick="setTab(&#39;a&#39;,2,4,&#39;tab&#39;,&#39;&#39;,&#39;&#39;)" class="">票据融资</li>-->
+                    <!--<li id="a3" onClick="setTab(&#39;a&#39;,3,4,&#39;tab&#39;,&#39;&#39;,&#39;&#39;)" class="">订单融资</li>-->
+                    <li id="a4"  class="">仓单融资</li>
+                </ul>
+            </div>
+            <div class="con_jr" id="con_a1">
+                <div class="jr_god">
+                    <div class="jr_let">
+                        <ul>
+                            <li class="ks01"></li>
+                            <li class="ks02"></li>
+                            <li class="ks03"></li>
+                            <li class="ks04"></li>
+                            <li class="ks05"></li>
+                        </ul>
+                    </div>
+                   <div>
+                       <div class="right_news" >
+                           {$zkjr.content}
+                       </div>
+                       <div class="right_news" STYLE="display: none">
+                           {$cdjr.content}
+                       </div>
+                   </div>
+
+                </div>
+            </div>
+            <div class="con_a" id="con_a2" style="display:none"><img src="./jinrong_files/sxqd.jpg" width="644" height="306"></div>
+            <div class="con_a" id="con_a3" style="display:none"><img src="./jinrong_files/sxqd.jpg" width="644" height="306"></div>
+            <div class="con_a" id="con_a4" style="display:none"><img src="./jinrong_files/sxqd.jpg" width="644" height="306"></div>
+        </div>
+        
+        <div class="right_jr">
+        	<div class="right_t01">
+                <p>填写相关资料，我们收到之后第一时间给您反馈，<a href="ziben.abage.cn/sitespecial.do?id=2">解决您的资金需求</a>。</p>
+                <form id="formWyrz" name="formWyrz" method="post">
+                
+                <ul>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;COM_NAME&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;COM_NAME&#39;,&#39;N&#39;);" defalutvalue="公司名称" value="公司名称" id="COM_NAME" name="paraMap.COM_NAME"></li>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;BUY_NAME&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;BUY_NAME&#39;,&#39;N&#39;);" defalutvalue="买方名称" value="买方名称" id="BUY_NAME" name="paraMap.BUY_NAME"></li>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;RZ_MONEY&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;RZ_MONEY&#39;,&#39;N&#39;);" defalutvalue="拟融资金额（万元）" value="拟融资金额（万元）" id="RZ_MONEY" name="paraMap.RZ_MONEY"></li>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;LINK_MAN&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;LINK_MAN&#39;,&#39;N&#39;);" defalutvalue="联系人" value="联系人" id="LINK_MAN" name="paraMap.LINK_MAN"></li>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;LINK_PHONE&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;LINK_PHONE&#39;,&#39;N&#39;);" defalutvalue="联系电话" value="联系电话" id="LINK_PHONE" name="paraMap.LINK_PHONE"></li>
+                    <li><input type="text" onFocus="infoIsFocus(&#39;mmask&#39;,&#39;Y&#39;);" onBlur="infoIsFocus(&#39;mmask&#39;,&#39;N&#39;);" defalutvalue="验证码" value="验证码" class="yzm01" name="paraMap.phoneMask" id="mmask"><input type="button" value="获取验证码" id="sendMaskBtn" class="yzm02" onClick="sendMsg();"></li>
+                </ul>
+                <div class="btn_jr"><input type="button" disable="disable" onClick="wyrz();" id="wyrzButton" value="我要融资"></div>
+                <div class="btn_jr"><input type="button" onClick="window.location.href=&#39;finance.do&#39;" value="在线融资" id="wyrzButton"></div>
+                
+                
+                </form>
+
+
+
+                
+            </div>
+            <div class="phont_numb">
+            	<p>咨询电话：</p><div>0371-61701735 / 61701730</div><p></p>
+            </div>
+            <div class="dz_jr">
+            	<p>资料递送地点：郑州市郑东新区商鼎路与和顺街交叉口广地和顺中心B座21A</p>
+            </div>
+        </div>
+    </div>
+</div>
+{include file="index/bottom"; /}
+
+<script>
+    $(".title_jr ul li").click(function(){
+        $(".right_news").eq($(this).index()).siblings().hide();
+        $(".right_news").eq($(this).index()).show();
+    })
+</script>

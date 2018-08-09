@@ -1,0 +1,75 @@
+
+	<style>
+		.right_r a i{width:15px; height:15px; margin-right:5px; vertical-align: middle;}
+		.right_r label a{color:#16cbc0!important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto;}
+		.news_con{ padding:20px;width:960px; margin:auto;}
+		.news_con h1{ line-height:50px; font-size:22px; text-align:center;height:50px; overflow:hidden;font-family:"微软雅黑"; color:#333;}
+		.edit1{ line-height:30px; height:30px; text-align:center; background:#f5f5f5; color:#666;}
+		.text{ padding:20px; line-height:2;}
+		.page_2{ text-align:center; padding:20px 0; clear:both;}
+		.summary{ padding:15px; background:#f9f9f9; border:1px solid #f1f1f1; margin-top:10px; text-indent:24px;}
+	</style>
+{include file="index/header";/}
+<!--banner开始 -->
+
+<!--banner结束 -->
+
+<div id="PaperPulp">
+	<!--数据统计开始-->
+	<div class="news_con" style="width: 1200px;">
+		<h1>{$con.newsName}</h1>
+		<div class="edit1">更新时间: {$con.newsTime|date="Y-m-d H:m:s",###} </div>
+		<!-- <div class="summary">我国冷冻物流建设尚处于起步阶段，仅侧重于数量保证，对品质的要求还有待于进一步完善。食品冷冻的市场化程度很低，第三方介入较少快递之家。除了外贸出口的部分以外，在国内流通的易腐食品的物流配送业务多数都是由生产商和经销商完成德邦物流查询，食品冷冻的第三方物流发展十分滞后，服务网络和信息系统不够健</div> -->
+		<div class="text f14">
+			{$con.newsContent}
+
+		</div>
+	</div>
+
+
+	<!--floor5结束-->
+</div>
+<!--交易流程开始-->
+
+<!--交易流程结束-->
+{include file="index/bottom"; /}
+</body>
+</html>
+<script src="__LAY__/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['carousel', 'form'], function(){
+        var carousel = layui.carousel
+            ,form = layui.form
+    		,layer = layui.layer
+        	$ = layui.$;
+
+        carousel.render({
+            elem: '#banner'
+            ,width: '100%'
+            ,height: '338px'
+            ,interval: 4000
+        });
+
+        form.on('submit(demo1)', function(data){
+
+           if(!data.field.username){layer.msg('对不起，您的用户名不能为空！！！！', {time: 1500, icon:5,anim:1,shade: 0.4,});return false}
+           if(!data.field.userpwd){layer.msg('对不起，您的密码不能为空！！！！', {time: 1500, icon:5,anim: 1,shade: 0.4,});return false}
+           if(!data.field.captcha){layer.msg('对不起，您的验证码不能为空', {time: 1500, icon:5,anim: 1,shade: 0.4,});return false}
+            var index = layer.load(1, {shade: [0.1,'#fff']});
+			$.post("index/login/login",data.field,function(e){
+                layer.close(index);
+				if(e.error_code==0){
+                    layer.msg(e.msg, {time: 1500, icon:6,shade: 0.4},function(){
+                        window.location.href="/user/index/index";
+					});
+				}else{
+				    $(".verification img").attr("src",'/captcha.html?x='+Math.random());
+                    layer.msg(e.msg, {time: 1500, icon:5,anim:1,shade: 0.4});
+                    return false
+				}
+			})
+            return false;
+        });
+
+    });
+</script>

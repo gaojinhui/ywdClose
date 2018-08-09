@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>我的账户</title>
+	<link rel="stylesheet" href="__LAY__/css/layui.css" media="all" />
+	<style>
+		body{background:#FFFFFF !important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto; padding: 10px 2px 0 10px;}
+	</style>
+</head>
+<style>
+	td .layui-table-cell{height:40px;line-height:40px;}
+	td .layui-table-cell p{height:20px;line-height:20px;}
+</style>
+<body>
+<div class="mt10"></div>
+<div class="layui-tab layui-tab-brief" lay-filter="test">
+	<ul class="layui-tab-title">
+		<li class="layui-this" lay-id="1">可融资合同(2)</li>
+		<li lay-id="2">待提报(0)</li>
+		<li lay-id="3">待审核(0)</li>
+		<li lay-id="4">全部(2)</li>
+	</ul>
+</div>
+<form class="layui-form" action="">
+<div class="demoTable" style="padding: 10px;">
+	合同编号：
+	<div class="layui-inline">
+		<input class="layui-input" name="id" id="demoReload" autocomplete="off">
+	</div>
+	商品名称：
+	<div class="layui-inline">
+		<input class="layui-input" name="id"  autocomplete="off">
+	</div>
+	合同类型：
+	<div class="layui-input-inline">
+		<select name="quiz1">
+			<option value="">请选择省</option>
+			<option value="1" selected="">可融资合同</option>
+			<option value="2">待提报</option>
+			<option value="3">全部</option>
+			<option value="4">待审核</option>
+		</select>
+	</div>
+	<button class="layui-btn" data-type="reload">搜索</button>
+</div>
+</form>
+<table class="layui-hide" id="table_list" lay-filter="user"></table>
+<script type="text/html" id="barDemo">
+	<a class="layui-btn layui-btn-xs" lay-event="detail">详情</a>
+	{{#  if(d.status == 4){ }}
+	<a class="layui-btn  layui-btn-xs layui-btn-danger" lay-event="apply">申请融资</a>
+	{{#  } }}
+
+</script>
+<script type="text/html" id="business">
+	<p>买方：{{d.buyers}}</p>
+	<p>卖方：{{d.sellers}}</p>
+</script>
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit','element', 'laydate','table','laypage','laytpl'], function(){
+        var table = layui.table;
+        $= layui.jquery;
+    	element = layui.element;
+        laytpl = layui.laytpl;
+
+        element.on('tab(test)', function(elem){
+			console.log($(this).attr('lay-id'));
+        });
+
+        laytpl.toDateString = function(nS){
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');
+        };
+
+        //方法级渲染
+        table.render({
+            elem: '#table_list'
+            ,url: '/user/index/get_financeable',
+            where: {type: '4', pagesize: 4},
+            method: 'post'
+            ,cols: [[
+                {field:'number', title: '融资编号',width:120}
+                ,{field:'goods', title: '商品名称',width:120}
+                ,{title: '买卖方',toolbar: '#business'}
+                ,{field:'endtime_text', title: '合同有效期',width:180}
+                ,{field:'type_text', title: '合同类型', sort: true, width:100}
+                ,{field:'status_text', title: '合同状态', sort: true, width:100}
+                ,{title: '操作', sort: true, width:135,toolbar: '#barDemo'}
+            ]]
+            ,id: 'testReload'
+            ,page: true,
+            done: function(res, curr, count){
+                layer.msg("加载完毕....",{time:500});
+            },
+            text: {
+                none: '暂时没有相关数据'
+            }
+        });
+
+        table.on('tool(user)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.open({
+                    type: 2,
+					title:'合同详情',
+                    skin: 'layui-layer-demo', //样式类名
+                    closeBtn: 1, //不显示关闭按钮
+                    anim: 2,
+                    area: ['100%', '100%'],
+                    shadeClose: true, //开启遮罩关闭
+                    content: '/user/index/get_financeable_detail?id='+ data.id
+                });
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    $.post("/manage/index/delbanner",{id:data.id},function(data){
+                        if(data.error_code==0){
+                            layer.msg("删除成功",{time:400},function(){
+                                obj.del();
+                                layer.close(index);
+                            });
+
+                        }else{
+                            layer.msg("删除失败",{time:400});
+                        }
+                    })
+
+                });
+            }
+        });
+
+
+    })
+</script>
+</body>
+</html>

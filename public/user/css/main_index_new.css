@@ -1,0 +1,58 @@
+body{ font:12px/1.8 Verdana, Geneva, sans-serif;}
+a{ color:#333;}
+a:hover{ color:#0099CB;}
+/*公用样式*/
+.header{height:30px;width:100%; min-width:1200px;background:#282828;color:#ccc; font:12px/30px "Microsoft YaHei","微软雅黑";}
+.topmessage{width:1200px;height:30px; margin:0 auto;}
+.topmessage .left_t{float:left}
+.topmessage .right_r{float:right;}
+.topmessage .left_t span{margin-right:20px;}
+.topmessage .right_r a{color:#ccc;padding:0 10px;}
+.topmessage .right_r a:hover{color:#fff;}
+.topmessage .right_r span{margin:0 3px;}
+.topmessage i{font:14px/30px "Microsoft YaHei","微软雅黑";color: #ff7e26;}
+/*top-logo开始*/
+.top_logo{width:1200px; height:90px; margin:0 auto;}
+.logo{float:left; margin-top:15px;}
+.logo a{display:block;height:58px;width:370px; background:url(../../img/logo_index.png) no-repeat;}
+.phone{float:right;height:46px;width:140px;padding-left:40px; background:url(../../img/dianhua.png) no-repeat left center;color:#FF7200;font:16px/24px "Microsoft Yahei";margin-top:15px;}
+.phone i{font:16px/24px "Microsoft Yahei";font-style: italic; color:#FF7200;}
+.phone span{display:block;}
+/*top-logo结束*/
+/*nave开始*/
+.nav{height:45px; width:100%;min-width:1200px;}
+.nav dl{width:1200px; margin:0 auto; font:16px/40px "微软雅黑";}
+.nav dl a{color:#333;}
+.nav dl dt{ float:left; width:120px; text-align:center;}
+.nav dl dd{ float:left; width:120px; text-align:center}
+.nav dl dt :hover{ float:left;width:120px; text-align:center;border-bottom:3px solid #0099CB;color:#0099CB;}
+.nav dl dd :hover{ float:left;width:120px; text-align:center;border-bottom:3px solid #0099CB;color:#0099CB;}
+.nav dl dd ul{ width:113px; background:#e8efe1;}
+.nav dl dd ul li{height:30px ;font:14px/30px "Microsoft YaHei","微软雅黑";border-bottom:1px solid #55802a;}
+.nav dl dd ul li a{color:#333;}
+.nav dl dd ul li:hover{background:#31530e;}
+.nav dl dd ul li:hover a{color:#fff;}
+/*nave结束*/
+
+
+
+/*底部导航、版权信息开始*/
+.foot{width:100%;height:225px;clear:both; overflow:hidden; background:#3E3E3E;}
+.foot_nav{width:1200px; margin:0 auto;margin-top:20px;}
+.guidance{float:left;width:130px;height:160px;margin-right:140px;padding-top:20px;font:16px/40px "Microsoft YaHei"; color:#fff;padding-left:60px;}
+.guidance:ladt-child{margin-right:0;}
+.nav_kstd1{ background:url(../../img/jytb.png) no-repeat left 15px;}
+.nav_kstd2{ background:url(../../img/fltb.png) no-repeat left 15px;}
+.nav_kstd3{ background:url(../../img/bztb.png) no-repeat left 15px;width:140px;}
+.nav_kstd4{ background:url(../../img/wmtb.png) no-repeat left 15px;}
+.guidance a{display:block;height:24px;font:14px/30px "Microsoft YaHei"; color:#aaa;}
+.guidance a:hover{ color:#fff;}
+.kufw{width:140px;margin-right:0;}
+.kufw a{display:block;}
+.kufw span{color:#ccc;font:14px/30px "Microsoft YaHei";}
+.kufw i{display:block; color:#0099CB;font-size:16px; font-weight:bold;}
+					
+.bottom{width:100%;height:90px; text-align:center;padding-top:15px; background:#000; color:#ccc; font:12px/30px "Microsoft YaHei","微软雅黑";}
+.bottom span{display:block; text-align:center;}
+.copyright{ margin:auto;width:1200px; line-height:22px; padding-top:10px; color:#777; text-align:center;}
+/*底部导航、版权信息结束*/

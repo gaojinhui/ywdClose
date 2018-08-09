@@ -1,0 +1,132 @@
+{include file="index/header"; title=""; keywords="1212" /}
+<!--招标大厅开始-->
+
+<style>
+	.cgzc table td{border-bottom:1px solid #dedede;font:14px/30px "Microsoft Yahei";color:#666; padding:5px 0;}
+ .msbm_btn{float:left; margin-left:120px;}
+	.djs_tb{float:right;height:40px;margin-right:10px;}
+	.djs_tb .hd_tit .corange{color:#0099cb;font:16px/30px "Microsoft Yahei"; color:#333;}
+	.clock_tp{float:left;margin:5px 10px 0 0;}
+	.djs_tb .hd_tit .corange .date_time{display:inline-block; height:30px; font:bold 16px/30px "Microsoft Yahei";width:40px; border:1px solid #dedede; text-align:center;margin:0 5px;}
+
+	.zbxi_xin{padding:20px;}
+	.zbxi_xin .zbxin_tab{font:14px/40px "宋体"; color:#666;border-right:1px solid #dedede; border-top:1px solid #dedede;}
+	.zbxi_xin .zbxin_tab th,.zbxi_xin .zbxin_tab td{ text-align:left;padding-left:10px; border-left:1px solid #dedede; border-bottom:1px solid #dedede;}
+	.zbxi_xin .zbxin_tab th{ background:#efefef;font:16px/40px "Microsoft Yahei";color:#333;}
+	.zbxi_xin .zbxin_tab .xzxi_tab{text-align:right; height:40px;}
+	.zbxi_xin .zbxin_tab .xzxi_tab .xzxi_btmbtn{display:inline-block;margin:5px 10px 0 0;}
+	.xzxi_btmbtn a{font:14px/30px "Microsoft Yahei"; border-radius:3px;color:#666;border:1px solid #dedede;margin:0 10px;display:inline-block;background:#efefef;height:30px;padding:0 30px;}
+	.xzxi_btmbtn .xin_zhu{background:#FF7200;color:#fff; border-color:#FF7200;}
+</style>
+<div style="background:#EFEFEF">
+<div class="cgzc" style="">
+
+<div class="flowstep">
+	<div class="liucheng">
+		<ol class="flowstep-5">
+
+			<!-- 交易会员未参与查看中标结果 查看开始-->
+
+
+			<!--
+
+				  <div style="font:bold 35px/100px 'Microsoft Yahei'; text-align:center;color:#ccc;">请 登 录 后 参 与 报 名</div>
+
+			-->
+			<div class="lcx_05"></div>
+			<div style="height:3px; width:600px; background:#dedede;position: relative;left:300px;top:17px;"></div>
+			<ol class="flowstep-z flowstep-t">
+				<li class="step-first" style="width:50%">
+					<div class="step-done">
+						<a href="javascript:void(0);" onclick="getXqGonggao();"><i class="layui-icon" style="font-size: 30px; color: #FF7F00; background: #ffffff">&#x1005;</i>
+						</a><div class="step-name"><a href="javascript:void(0);" onclick="getXqGonggao();">公告</a><p>{$result.starttime_text}</p></div>
+					</div>
+				</li>
+				<li class="step-last" style="width:50%">
+					<div class="step-done">
+						<a href="javascript:void(0);" onclick="winResult();"><i class="layui-icon" style="font-size: 30px; color: #FF7F00; background: #ffffff">&#x1005;</i>
+						</a><div class="step-name"><a href="javascript:void(0);" onclick="winResult();">中标结果</a><p>{$result.endtime_text}</p></div>
+					</div>
+				</li>
+			</ol>
+
+
+
+			<!--  交易会员未参与查看中标结果 查看结束-->
+
+		</ol></div>
+</div>
+<div class="zbxi_xin" id="is_open">
+	<table width="100%" border="0" class="zbxin_tab">
+		<tbody><tr>
+			<th colspan="5">
+				<div class="fl fb f16 zbmc_top">{$result.company}</div>
+				<!--开标倒计时开始 -->
+				<div class="djs_tb">
+					<input type="hidden" id="OBJ_ID" value="ZB20160912B001">
+					<input type="hidden" id="systime" value="2018-03-12 21:26:45">
+					<input type="hidden" id="limitDateVal" value="2016-09-14-10-00-00">
+
+					<div class="hd_tit pl10">
+						<span class="corange fb f16" id="limit_date"></span>
+
+					</div>
+
+				</div>
+				<!--开标倒计时结束 -->
+			</th>
+		</tr>
+		<tr>
+			<td width="300">招标单位： {$result.company}</td>
+			<td width="190">招标编号：{$result.number}</td>
+			<td width="190">招标方式：{$result.zbfs_text}</td>
+			<td width="300">投标时间：{$result.starttime_text}--{$result.endtime_text}</td>
+			<td width="240">开标方式：[{$result.kbfs_text}]</td>
+		</tr>
+		<tr>
+			<td>投标有效期：{$result.day}天</td>
+			<td>采购方式：{$result.cgfs_text}</td>
+			<td>资金来源：自筹</td>
+			<td>交货期：2016年9月15-2016年9月30日</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="5" class="xzxi_tab">
+			</td>
+		</tr>
+
+		</tbody></table>
+	<div style="font:18px/40px 'Microsoft Yahei'; color:#ff0000; width:100%; text-align:center;">
+
+	</div>
+	<div style=" padding: 10px;">
+		{$result.introduce}
+	</div>
+</div>
+	</div>
+<!--招标大厅结束-->
+</div>
+{include file="index/bottom"; /}
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','table','laypage'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate,
+            table = layui.table;
+        laypage = layui.laypage;
+        $ =layui.jquery;
+        //监听提交
+
+    }).define(['jquery'],function(exports){
+        $ = layui.jquery;
+        exports('change', function(e,index){
+            console.log();
+            $(e).addClass("tab");
+            $(e).siblings().removeClass("tab");
+			$(".zb").eq(index).show();
+            $(".zb").eq(index).siblings().hide();
+        });
+    });
+</script>

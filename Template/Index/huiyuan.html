@@ -1,0 +1,26 @@
+{include file="index/header";/}
+<style>
+    .fenye ul li{ float: left; padding: 1px 1px!important;}
+    .fenye ul li a{ float: left; padding: 10px 20px; color: #00B5F0}
+    .fenye ul li span{ float: left; padding: 10px 20px;}
+</style>
+<div class="cg_hycont">
+	<div class="con_hycg">
+    	<ul>
+            {volist name="list" id="vo"}
+
+            <li>
+                <h1>{$vo.conpanyname}<span><a href="{$vo.link}" target="_blank">查看详情</a></span></h1>
+                <p class="seader" style="overflow: hidden">{$vo.content}</p>
+            </li>
+            {/volist}
+
+    	</ul>
+        <div class="fenye">
+            {$list->render()}
+        </div>
+    </div>
+
+
+</div>
+{include file="index/bottom"; /}

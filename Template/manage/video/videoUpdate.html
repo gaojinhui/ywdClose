@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>课程编辑</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="__UE__lang/zh-cn/zh-cn.js"></script>
+</head>
+<body class="childrenBody" style="margin-top: 2em">
+	<form class="layui-form">
+	<input  name="id" value="{$id}" type="hidden">
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label">课程标题：</label>
+				<div class="layui-input-block">
+					<input type="text" name="titleName" class="layui-input newsAuthor" style="width: 250px" lay-verify="required" placeholder="请输入课程标题" value="{$data.title}">
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item"  id="add">
+			<div class="layui-inline">
+				<label class="layui-form-label">课程名称：</label>
+				<div class="layui-input-block">
+					<input type="text" name="title" class="layui-input newsAuthor" style="width: 250px" lay-verify="required" placeholder="请输入课程名称" value="{$data.name}">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">视频地址：</label>
+				<div class="layui-input-block">
+					<input type="text" style="width: 250px" name="url" class="layui-input newsAuthor"  lay-verify="url" value="{$data.url}">
+				</div>
+			</div>
+			<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="addVideoTypeg22222()">增加视频</a>
+		</div>
+		<?php $a=1;?>
+	{volist name="urlList" id="list"}
+		<div class="layui-form-item" id='videodd{$a}'>
+			<div class="layui-inline">
+				<label class="layui-form-label">课程名称：</label>
+				<div class="layui-input-block">
+					<input type="text" style="width: 250px" name="title{$a}" class="layui-input newsAuthor"  lay-verify="title" placeholder="请输入课程名称" value="{$list.0}">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">视频地址：</label>
+				<div class="layui-input-block">
+					<input type="text" style="width: 250px" name="url{$a}" class="layui-input newsAuthor"  lay-verify="url"  value="{$list.1}">
+				</div>
+			</div>
+			<image src='__MANAGE__/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;' onclick='delvideo({$a})'/>
+		</div>
+		<?php $a++;?>
+	{/volist}
+	<?php $a=$a-1;?>
+	<input type="hidden" value="{$a}" name="number"  id="number"/>
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label">讲师：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="lecturer" class="layui-input newsAuthor"  lay-verify="required" placeholder="请输入课程讲师" value="{$data.lecturer}">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">价格：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="price" class="layui-input newsAuthor"  lay-verify="price" placeholder="请输入价格如 19.68" value="{$data.price}">
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">折扣：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="rebate" class="layui-input newsAuthor" lay-verify="rebate" placeholder="请输入折扣如 0.96" value="{$data.rebate}">
+				</div>
+			</div>
+		<div class="layui-form-item">
+			<div class="layui-inline">
+				<label class="layui-form-label">是否可试听</label>
+				<div class="layui-input-block">
+					<input type="radio" name="audi" value="1" title="可试听"  {if condition="$data.audi == 1 "}checked{/if}>
+					<input type="radio" name="audi" value="2" title="不可试听"  {if condition="$data.audi == 2 "}checked{/if}>
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">是否开通</label>
+				<div class="layui-input-block">
+					<input type="radio" name="fan_xian" value="1" title="开通返现" {if condition="$data.fan_xian == 1 "}checked{/if}>
+					<input type="radio" name="fan_xian" value="2" title="关闭返现"  {if condition="$data.fan_xian == 2 "}checked{/if}>
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">返现金额：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="return_amount" class="layui-input newsAuthor" lay-verify="return_amount" placeholder="请输入返现额度"  value="{$data.return_amount}">
+				</div>
+			</div>
+		</div>
+		<!-- <div class="layui-inline">		六月三十号暂时屏蔽调
+			<label class="layui-form-label">课程分类</label>
+			<div class="layui-input-inline">
+				<select name="Type" class="newsLook" lay-filter="browseLook" lay-verify="Type">
+					<option value="">请选择</option>
+					{volist name="Type" id="ty"}
+					{if condition="$data.val == $ty.value "}
+					<option value="{$ty.value}" selected>{$ty.test_project}</option>
+					{else /}<option value="{$ty.value}">{$ty.test_project}</option>
+					{/if}
+					{/volist}
+				</select>
+			</div>
+		</div> -->
+		<!-- <div class="layui-inline">
+					<label class="layui-form-label">课程推荐</label>
+					<div class="layui-input-inline">
+						<select name="fen_id" class="newsLook" lay-filter="browseLook" lay-verify="Type">
+							{volist name="typeid" id="t"}
+							{if condition="$data.fen_id == $t.id "}
+							<option value="{$ty.value}" selected>{$t.name}</option>
+							{else /}<option value="{$t.id}">{$t.name}</option>
+							{/if}
+							{/volist}
+						</select>	
+					</div>
+				</div> -->
+		<div class="layui-form-item">
+			<label class="layui-form-label">课程简介</label>
+			<div class="layui-input-block">
+				<script id="editor" name="editor" type="text/plain" class="layui-form-item">{$data.remark|default=''}</script>
+			</div>
+		</div>
+		{if condition="($data.pid neq 173)&&($data.pid neq 174)&&($data.pid neq 175)"}
+		<div class="layui-form-item" id="addxunlian">
+			<label class="layui-form-label">训练计划</label>
+			<div class="layui-inline">
+				<label class="layui-form-label">训练项目</label>
+				<div class="layui-input-block">
+					<input type="text" name="training_content" value="{$data.training_content}" class="layui-input newsAuthor" style="width: 250px" placeholder="请输入训练项目">
+				</div>
+			</div>
+			<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="addxunlian()">增加训练计划</a>
+		</div>
+		<?php $b=1;?>
+		{volist name="xun_list" id="xun"}
+		<div class="layui-form-item" id="ddd{$b}">
+			<div class="layui-inline">
+				<label class="layui-form-label">动作：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="action{$b}" value="{$xun.action}" class="layui-input newsAuthor"  placeholder="" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">个数/时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="num_time{$b}" value="{$xun.num_time}" class="layui-input newsAuthor"   placeholder="" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">组数：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="group_num{$b}" value="{$xun.group_num}" class="layui-input newsAuthor"  placeholder="" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">组时间：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="group_time{$b}" value="{$xun.group_time}" class="layui-input newsAuthor"  placeholder="" >
+				</div>
+			</div>
+			<div class="layui-inline">
+				<label class="layui-form-label">组间休息：</label>
+				<div class="layui-input-inline">
+					<input type="text" name="group_rest{$b}" value="{$xun.group_rest}" class="layui-input newsAuthor"  placeholder="" >
+				</div>
+			</div>
+			<image src='__MANAGE__/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;' onclick='del({$b})'/>
+		</div>
+		<?php $b++;?>
+		{/volist}
+		<?php $b=$b-1;?>
+		<input type="hidden" value="{$b}" name="xun_number"  id="xun_number"/>
+		{/if}
+		<!-- <div class="layui-form-item">
+			<label class="layui-form-label">训练时间</label>
+			<div class="layui-input-block">
+				<input type="text" name="training_time" class="layui-input newsAuthor" style="width: 250px" lay-verify="required" placeholder="训练时间单位秒" value="{$data.training_time}">
+			</div>
+		</div> -->
+                <div class="layui-form-item">
+					<label class="layui-form-label" style="display: block">图片</label>
+					<div class="site-demo-upload">
+						<div class="layui-upload-drag" id="test10">
+							<i class="layui-icon"></i>
+							<p>点击上传，或将文件拖拽到此处</p>
+						</div>
+						<input type="hidden" name="image"  id="image" lay-verify="image" value="{$data.image}" >
+						<img style="width: 300px; height: 135px;  margin-top: -60px;" src="{$data.image}"/>
+					</div>
+				</div>
+				<div class="layui-form-item">
+					<div class="layui-input-block">
+						<button class="layui-btn" lay-submit lay-filter="upCourse">立即提交</button>
+					</div>
+				</div>
+	     </div>
+		</form>
+	<script type="text/javascript" src="__LAY__layui.js"></script>
+	<script type="text/javascript" src="__MANAGE__/js/video/videoUpdata.js"></script>
+</body>
+</html>
+<script>
+    var ue = UE.getEditor('editor',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+    var i=1;
+    function addVideoTypeg22222(){
+    	var e=$('#number').val();
+    	if(e>=1)
+    	{
+    		i=parseInt(e)+1;
+    	}
+    	else
+    	{
+    		i=1;
+    	}
+    	var html='';
+    	  html="<div class='layui-form-item' id='videodd"+i+"'>";
+    	  html+="<div class='layui-inline'>";
+	  html+=			"<label class='layui-form-label'>课程名称：</label>";
+	  html+=			"<div class='layui-input-block'>";
+	  html+=				"<input type='text' name='title"+i+"' class='layui-input newsAuthor' style='width: 250px' lay-verify='required' placeholder='请输入课程名称'>";
+	  html+=			"</div>";
+	  html+=		"</div>";
+	  html+=		"<div class='layui-inline'>";
+	  html+=			"<label class='layui-form-label'>视频地址：</label>";
+	  html+=			"<div class='layui-input-block'>";
+	  html+=				"<input type='text' name='url"+i+"' style='width: 250px' class='layui-input newsAuthor'  lay-verify='url' placeholder='请输入视频链接如：www.baidu.com' >";
+	  html+=			"</div>";
+	  html+=		"</div>";
+	   html+=		"<image src='__MANAGE__/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;' onclick='delvideo("+i+")'>";
+	  html+="</div>";
+	$('#add').append(html);
+	document.getElementById('number').value=i;
+	i=parseInt(i)+1;
+    }
+    function delvideo(tr)
+    {
+	//根据节点获取当前行
+	var o = document.getElementById("videodd"+tr);
+	o.remove();
+	var df=document.getElementById('number').value;
+	//document.getElementById('number').value=parseInt(df)-1;
+    }
+     // 增加训练计划
+    var b=1;
+    function addxunlian()
+    {
+    	var c=$('#xun_number').val();
+    	if(c>=1)
+    	{
+    		b=parseInt(c)+1;
+    	}
+    	else
+    	{
+    		b=1;
+    	}
+    	var html='';
+    	html+="<div class='layui-form-item' id='ddd"+b+"'>";
+	html+=		"<div class='layui-inline'>";
+	html+=			"<label class='layui-form-label'>动作：</label>";
+	html+=			"<div class='layui-input-inline'>";
+	html+=				"<input type='text' name='action"+b+"' class='layui-input newsAuthor'  placeholder='请输入动作名称' >";
+	html+=			"</div>";
+	html+=		"</div>";
+	html+=		"<div class='layui-inline'>";
+	html+=			"<label class='layui-form-label'>个数/时间：</label>";
+	html+=			"<div class='layui-input-inline'>";
+	html+=				"<input type='text' name='num_time"+b+"' class='layui-input newsAuthor'   placeholder='请输入每组要做个数' >";
+	html+=			"</div>";
+	html+=		"</div>";
+	html+=		"<div class='layui-inline'>";
+	html+=			"<label class='layui-form-label'>组数：</label>";
+	html+=			"<div class='layui-input-inline'>";
+	html+=				"<input type='text' name='group_num"+b+"' class='layui-input newsAuthor' placeholder='请输入组数'>";
+	html+=			"</div>";
+	html+=		"</div>";
+	html+=		"<div class='layui-inline'>";
+	html+=			"<label class='layui-form-label'>组时间：</label>";
+	html+=			"<div class='layui-input-inline'>";
+	html+=				"<input type='text' name='group_time"+b+"' class='layui-input newsAuthor' placeholder='请输入每组时间'>";
+	html+=			"</div>";
+	html+=		"</div>";
+	html+=		"<div class='layui-inline'>";
+	html+=			"<label class='layui-form-label'>组间休息：</label>";
+	html+=			"<div class='layui-input-inline'>";
+	html+=				"<input type='text' name='group_rest"+b+"' class='layui-input newsAuthor' placeholder='请输入组间休息时间' >";
+	html+=			"</div>";
+	html+=		"</div>	";
+	html+=		"<image src='__MANAGE__/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;' onclick='del("+b+")'>";
+	html+=	"</div>";
+	$('#addxunlian').append(html);
+	document.getElementById('xun_number').value=b;
+	b=b+1;
+    }
+    function del(a)
+    {
+	//获取父元素
+	var info = document.getElementById("addxunlian");
+	//根据节点获取当前行
+	var o = document.getElementById("ddd"+a);
+	o.remove();
+	var df=document.getElementById('xun_number').value;
+	//document.getElementById('xun_number').value=parseInt(df)-1;
+	//var rowIndex = o.parentNode.parentNode.rowIndex;
+	//删除一行
+	//info.deleteRow(rowIndex-1);
+    }
+</script>

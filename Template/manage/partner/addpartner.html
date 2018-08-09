@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>文章添加--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="__UE__lang/zh-cn/zh-cn.js"></script>
+</head>
+<body class="childrenBody" style="margin-top: 2em">
+	<form class="layui-form">
+		<div class="layui-form-item">
+			<label class="layui-form-label">公司名字</label>
+			<div class="layui-input-block">
+				<input type="text" name="title" class="layui-input newsName" lay-verify="required" placeholder="请输入公司名字">
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">公司链接</label>
+			<div class="layui-input-block">
+				<input type="text" name="link" class="layui-input newsName" lay-verify="required" placeholder="例如：http://www.icuoun.com/">
+			</div>
+		</div>
+		<div class="layui-form-item">
+
+			<div class="layui-inline">
+				<label class="layui-form-label">是否显示</label>
+				<div class="layui-input-inline">
+					<select name="isShow" class="newsLook" lay-filter="browseLook">
+				        <option value="1">显示</option>
+				        <option value="2">不显示</option>
+				    </select>
+				</div>
+			</div>
+		</div>
+		<div class="layui-form-item">
+			<label class="layui-form-label">公司介绍</label>
+			<div class="layui-input-block">
+				<script id="editor" type="text/plain" class="layui-form-item">{$data.content|default=''}</script>
+			</div>
+		</div>
+
+		<div class="layui-form-item">
+			<div class="layui-input-block">
+				<button class="layui-btn" lay-submit="" lay-filter="addNews">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		    </div>
+		</div>
+	</form>
+	<script type="text/javascript" src="__LAY__layui.js"></script>
+	<script type="text/javascript" src="__MANAGE__/js/partnerAdd.js"></script>
+</body>
+</html>
+<script>
+    var ue = UE.getEditor('editor',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+</script>

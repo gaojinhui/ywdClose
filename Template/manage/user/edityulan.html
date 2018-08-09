@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="__UE__lang/zh-cn/zh-cn.js"></script>
+
+	<script type="text/javascript" src="__LAY__layui.js"></script>
+	<script type="text/javascript" src="__MANAGE__/js/yulan_email.js"></script>
+	<script type="text/javascript" src="__MANAGE__/js/emailVideo.js"></script>
+</head>
+<body class="winui-window-body">
+<form class="layui-form"  enctype="multipart/form-data" method="post" style="margin-top: 20px;">
+	<!-- <div class="layui-form-item">
+		<label class="layui-form-label">用户名</label>
+		<div class="layui-input-block">
+			<input type="text" name="username"   lay-verify="required" placeholder="请输入用户|名字母和英文" disabled autocomplete="off" class="layui-input" value="{$info.nickName}">
+		</div>
+	</div> -->
+	<input type="hidden" value="{$id}" name="uid" id="lay_upload" >
+	<div id="standard">
+	<?php $iq=0;?>
+	{volist name="litpic1" id="v"}
+	<?php  $iq++;?>
+		<div class="layui-form-item" id="videodd{$iq}">
+			<label class="layui-form-label" style="display: block">标准图片</label>
+			<div class="site-demo-upload">
+				<div class="layui-upload-drag" id="test{$iq}">
+					<i class="layui-icon"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="{$v}" name="litpic1[]" id="litpicaa{$iq}"/>
+				<img id="litpica{$iq}" style="width: 300px; height: 135px;  margin-top: -60px;" src="{$v}"/>
+				<image src='/public/manage/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;margin-left: 52px;margin-bottom: -62px;' onclick='delvideo({$iq})'/>
+			</div>
+		</div>
+		<script>
+			layui.use(['form',"table","upload","laytpl"], function(){
+			    var $ = layui.$, form = layui.form;
+			    table = layui.table;
+			    upload = layui.upload;
+			    laytpl = layui.laytpl;
+			    //拖拽上传
+			    upload.render({
+			        elem: '#test'+<?php echo $iq?>
+			        ,url: '/manage/index/upload',
+			        size:'6000'
+			        ,done: function(res){
+			            if(res.error_code==0){
+			                layer.msg('上传成功',{time:800},function(){
+			                    $("#litpica<?php echo $iq?>").attr("src",res.data);
+			                    $("#litpica<?php echo $iq?>").show();
+			                    document.getElementById('litpicaa<?php echo $iq?>').value=res.data;
+			                });
+			            }else{
+			                layer.msg('上传失败',{time:800});
+			            }
+			        }
+			    });
+			 });
+		</script>
+	{/volist}
+	</div>
+	<div class="layui-form-item">
+		<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="addstandard({$iq})" style="margin-left: 46px;">增加标准图片</a>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户反馈</label>
+			<div class="layui-input-block">
+				<script id="editor" name="editorValue" type="text/plain" class="layui-form-item">{$res.editorValue|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div id="userlitpic">
+	<?php $j=200;?>
+	{volist name="litpic2" id="v"}
+	<?php $j++;?>
+		<div class="layui-form-item" id="litpicrrr{$j}">
+			<label class="layui-form-label" style="display: block">用户图片</label>
+			<div class="site-demo-up">
+				<div class="layui-upload-drag" id="test{$j}">
+					<i class="layui-icon"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="{$v}" name="litpic200[]" id="litpicbb{$j}" />
+				<img id="litpicb{$j}" style="width: 300px; height: 135px;  margin-top: -60px;" src="{$v}"/>
+				<image src='/public/manage/images/cha.png' style='background-color: #ccc;border-radius: 30px;height: 30px;width: 30px;margin-left: 52px;margin-bottom: -62px;' onclick='del({$j})'/>
+			</div>
+		</div>
+		<script>
+			layui.use(['form',"table","upload","laytpl"], function(){
+			    var $ = layui.$, form = layui.form;
+			    table = layui.table;
+			    upload = layui.upload;
+			    laytpl = layui.laytpl;
+			    //拖拽上传
+			    upload.render({
+			        elem: '#test'+<?php echo $j?>
+			        ,url: '/manage/index/upload',
+			        size:'6000'
+			        ,done: function(res){
+			            if(res.error_code==0){
+			                layer.msg('上传成功',{time:800},function(){
+			                    $("#litpicb<?php echo $j?>").attr("src",res.data);
+			                    $("#litpicb<?php echo $j?>").show();
+			                    document.getElementById('litpicbb<?php echo $j?>').value=res.data;
+			                });
+			            }else{
+			                layer.msg('上传失败',{time:800});
+			            }
+			        }
+			    });
+			 });
+		</script>
+	{/volist}
+	</div>
+	<div class="layui-form-item">
+		<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="adduserlitpic({$j})" style="margin-left: 46px;">增加用户图片</a>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">反馈总结</label>
+			<div class="layui-input-block">
+				<script id="editor1" name="summary" type="text/plain" class="layui-form-item">{$res.summary|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-input-block">
+
+			<button class="layui-btn" lay-submit="" lay-filter="addNews">立即提交</button>
+			<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    </div>
+	</div>
+</form>
+</body>
+</html>
+<script>
+var ue = UE.getEditor('editor',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+var ue = UE.getEditor('editor1',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+function play(){
+	var url=$('#urll').attr('data-value');
+	var loadstr='<video width="100%" height="100%"  controls="controls" autobuffer="autobuffer"  autoplay="autoplay" loop="loop" style="position:fixed!important;top:0;left:0;"><source src="'+url+'"></source></video>';
+		/*$('.layer-demolist').on('click', function(){*/
+		
+			layer.open({
+			  type:1,
+			  title: true,
+			  area: ['730px', '420px'],
+			  shade: 0,
+			  closeBtn: 1,
+			  content: loadstr,
+			});
+		/*})*/
+	}
+
+</script>

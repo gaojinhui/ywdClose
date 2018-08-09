@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+	<link rel="stylesheet" href="__MANAGE__/css/menu.css" media="all" />
+	<script src="__MANAGE__/js/echarts.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="__UE__lang/zh-cn/zh-cn.js"></script>
+	<script type="text/javascript" src="__MANAGE__/js/jquery-3.2.0.min.js"></script>
+	<style>
+	.site-doc-icon li {
+		display: inline-block;
+		vertical-align: middle;
+		width: 127px;
+		line-height: 25px;
+		padding: 20px 0;
+		margin-right: -1px;
+		margin-bottom: -1px;
+		border: 1px solid #e2e2e2;
+		font-size: 14px;
+		text-align: center;
+		color: #666;
+		transition: all .3s;
+		-webkit-transition: all .3s;
+	}
+	.site-doc-icon li .layui-icon {
+		display: inline-block;
+		font-size: 30px;
+	}
+</style>
+</head>
+<body class="childrenBody">
+<form class="layui-form" style="margin-top: 20px;">
+	<div class="layui-form-item">
+		<label class="layui-form-label">报表标题：</label>
+		<div class="layui-input-block">
+			<input type="text" name="remarks"  placeholder="例如：周报表"  class="layui-input" value="">
+		</div>
+	</div>
+	<input type="hidden" value="{$id}" name="uid" id="uid" >
+	<input type="hidden" value="{$openid}" name="openid" id="openid" >
+	<div id="bao" class='layui-form-item'>
+
+	</div>
+	<!-- 报表雷达图 -->
+	<div class="layui-form-item">
+		<div id="chart1" style="width: 80%;height: 400px;margin:0 auto"></div>
+	</div>
+	<!-- 报表雷达图 -->
+	<div id="standard">
+		<div class="layui-form-item" >
+			<label class="layui-form-label" style="display: block">标准图片</label>
+			<div class="site-demo-upload">
+				<div class="layui-upload-drag" id="test1">
+					<i class="layui-icon menu-icon"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="" name="litpic1[]" id="litpic1"/>
+				<img id="litpica1" style="width: 300px; height: 135px; display: none;  margin-top: -60px;" src=""/>
+				<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="addstandard()" style="margin-left: 46px;margin-bottom: -50px;">增加标准图片</a>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户反馈</label>
+			<div class="layui-input-block">
+				<script id="editor" name="editorValue" type="text/plain" class="layui-form-item">{$info.description|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div id="userlitpic">
+		<div class="layui-form-item">
+			<label class="layui-form-label" style="display: block">用户图片</label>
+			<div class="site-demo-up">
+				<div class="layui-upload-drag" id="test200">
+					<i class="layui-icon menu-litpic"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="" name="litpic200[]" id="litpic200" />
+				<img id="litpicb200" style="width: 300px; height: 135px; display: none;  margin-top: -60px;" src=""/>
+				<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="adduserlitpic()" style="margin-left: 46px;margin-bottom: -50px;">增加用户图片</a>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">反馈总结</label>
+			<div class="layui-input-block">
+				<script id="editor1" name="summary" type="text/plain" class="layui-form-item">{$info.description|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-input-block">
+
+			<button class="layui-btn" lay-submit="" lay-filter="addreport">立即提交</button>
+			<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    </div>
+	</div>
+</form>
+<script type="text/javascript" src="__LAY__layui.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/addreport.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/emailVideo.js"></script>
+</body>
+</html>
+<script>
+var ue = UE.getEditor('editor',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+var ue = UE.getEditor('editor1',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+</script>
+<script type="text/javascript">
+var datat=[];
+$().ready(function(){
+	$.post("/manage/user_contorller/video_title_list",'',function(data){
+		console.log(data);
+		var html='';
+		for (var i = 0; i < data.count.length; i++) {
+			datat.push(data.count[i]);
+			html+="<div class='layui-input-block' style='margin-left:0px !important;float:left'>";
+			html+="<label class='layui-form-label' style='width:126px'>"+data.count[i].name+"</label>";
+			html+="<input type='hidden'  name='biaoid[]'  value='"+data.count[i].id+"'/>";
+			html+="<input type='text' name='bao[]' class='layui-input' placeholder='最大值100' value='' style='width:36% !important' onblur='changeTr(this)' data-value='"+i+"'>";
+			html+="</div>";
+		}
+		$('#bao').append(html);
+	})
+})
+var chart1 ;
+window.onload=function(){
+	var val=[0,0,0,0,0,0,0,0,0];
+	atr(val);
+
+}
+function atr(val){
+	// 基于准备好的容器(这里的容器是id为chart1的div)，初始化echarts实例
+	chart1 = echarts.init(document.getElementById("chart1"));
+	
+	// 指定图表的配置项和数据
+	var option = {
+	    backgroundColor: 'rgba(204,204,204,0.7 )',         // 背景色，默认无背景	rgba(51,255,255,0.7)
+	    
+	    title: {
+			text: '报表各项数据统计分析',
+			link: 'https://blog.csdn.net/gray_key',
+			target: 'blank',
+			top: '5%',
+			left: '3%',
+			textStyle: {
+				color: '#fff',
+				fontSize: 20,
+			}
+		},
+		
+	    legend: {                        // 图例组件
+	        show: true,         
+	        icon: 'rect',                   // 图例项的 icon。ECharts 提供的标记类型包括 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow'也可以通过 'image://url' 设置为图片，其中 url 为图片的链接，或者 dataURI。可以通过 'path://' 将图标设置为任意的矢量路径。         
+	        top : '20%',                    // 图例距离顶部边距
+	        left : '5%',                   // 图例距离左侧边距
+	        itemWidth: 10,                  // 图例标记的图形宽度。[ default: 25 ]
+	        itemHeight: 10,                 // 图例标记的图形高度。[ default: 14 ]
+	        itemGap: 30,                	// 图例每项之间的间隔。[ default: 10 ]横向布局时为水平间隔，纵向布局时为纵向间隔。
+	        orient: 'vertical',             // 图例列表的布局朝向,'horizontal'为横向,''为纵向.
+	        textStyle: {                    // 图例的公用文本样式。
+	            fontSize: 15,
+	            color: '#fff'
+	        },
+	    },
+	    
+	    radar: [{                       // 雷达图坐标系组件，只适用于雷达图。
+	        center: ['60%', '50%'],             // 圆中心坐标，数组的第一项是横坐标，第二项是纵坐标。[ default: ['50%', '50%'] ]
+	        radius: 160,                        // 圆的半径，数组的第一项是内半径，第二项是外半径。
+	        startAngle: 90,                     // 坐标系起始角度，也就是第一个指示器轴的角度。[ default: 90 ]
+	        name: {                             // (圆外的标签)雷达图每个指示器名称的配置项。
+	            formatter: '{value}',
+	            textStyle: {
+	                fontSize: 15,
+	                color: '#000'
+	            }
+	        },
+	        nameGap: 15,                        // 指示器名称和指示器轴的距离。[ default: 15 ]
+	        splitNumber: 4,                     // (这里是圆的环数)指示器轴的分割段数。[ default: 5 ]
+	        shape: 'circle',                    // 雷达图绘制类型，支持 'polygon'(多边形) 和 'circle'(圆)。[ default: 'polygon' ]
+	        axisLine: {                         // (圆内的几条直线)坐标轴轴线相关设置
+	            lineStyle: {
+	                color: '#fff',                   // 坐标轴线线的颜色。
+	                width: 1,                      	 // 坐标轴线线宽。
+	                type: 'solid',                   // 坐标轴线线的类型。
+	            }
+	        },
+	        splitLine: {                        // (这里是指所有圆环)坐标轴在 grid 区域中的分隔线。
+	            lineStyle: {
+	                color: '#fff',                       // 分隔线颜色
+	                width: 2, 							 // 分隔线线宽
+	            }
+	        },
+	        splitArea: {                        // 坐标轴在 grid 区域中的分隔区域，默认不显示。
+	            show: true,
+	            areaStyle: {                            // 分隔区域的样式设置。
+	                color: ['rgba(250,250,250,0.3)','rgba(200,200,200,0.3)'],       // 分隔区域颜色。分隔区域会按数组中颜色的顺序依次循环设置颜色。默认是一个深浅的间隔色。
+	            }
+	        },
+	        indicator:[{name:12,max:100}]
+	    }],
+	     series : [
+            {
+                name: '学生平均成绩',
+                type: 'radar',
+                itemStyle: {
+                    normal: {
+                        areaStyle: {
+                            type: 'int'
+                        }
+                    }
+                },
+	data: [{
+	            name: '报表',
+	            value: [0, 0, 0, 0, 0,0,0,0,0],
+	            symbol: 'circle',
+	            symbolSize: 5,
+	            label: {                        
+	                    normal: {  
+	                        show: true,
+	                        position: 'top',
+	                        distance: 5,
+	                        color: 'rgba(51,0,255,1)',
+	                        fontSize: 14,
+	                        formatter:function(params) {  
+	                            return params.value;  
+	                        }  
+	                    }  
+	                },
+	            itemStyle: {
+	                normal: {
+	                    borderColor: 'rgba(51,0,255,1)',
+	                    borderWidth: 3,
+	                }
+	            },
+	            lineStyle: {
+	                normal: {
+	                    opacity: 0.5
+	                }
+	            },
+	            areaStyle: {
+	                normal: {
+	                    color: 'rgba(51,0,255,0.5)'
+	                }
+	            }
+	        }]
+	    }, ]
+	};
+
+	
+	// 使用刚指定的配置项和数据显示图表
+	chart1.setOption(option)
+	chart1.setOption({
+		polar:[
+			{
+				indicator:datat	
+			}
+		],
+		series:[
+			{
+				data:[
+					{
+					            name: '报表',
+					            value: val,
+					            symbol: 'circle',
+					            symbolSize: 5,
+					            label: {                        
+					                    normal: {  
+					                        show: true,
+					                        position: 'top',
+					                        distance: 5,
+					                        color: 'rgba(51,0,255,1)',
+					                        fontSize: 14,
+					                        formatter:function(params) {  
+					                            return params.value;  
+					                        }  
+					                    }  
+					                },
+					            itemStyle: {
+					                normal: {
+					                    borderColor: 'rgba(51,0,255,1)',
+					                    borderWidth: 3,
+					                }
+					            },
+					            lineStyle: {
+					                normal: {
+					                    opacity: 0.5
+					                }
+					            },
+					            areaStyle: {
+					                normal: {
+					                    color: 'rgba(51,0,255,0.5)'
+					                }
+					            }
+					        }
+				]
+			}
+		]
+	})
+}
+var a,ba,c,d,e,f,g,h,k;
+function changeTr(forThis){
+	if($(forThis).val()!=''){
+		if($(forThis).attr('data-value')==0){
+			a=$(forThis).val();
+		}else if($(forThis).attr('data-value')==1){
+			ba=$(forThis).val();
+		}else if($(forThis).attr('data-value')==2){
+			c=$(forThis).val();
+		}else if($(forThis).attr('data-value')==3){
+			d=$(forThis).val();
+		}else if($(forThis).attr('data-value')==4){
+			e=$(forThis).val();
+		}else if($(forThis).attr('data-value')==5){
+			f=$(forThis).val();
+		}else if($(forThis).attr('data-value')==6){
+			g=$(forThis).val();
+		}else if($(forThis).attr('data-value')==7){
+			h=$(forThis).val();
+		}else if($(forThis).attr('data-value')==8){
+			k=$(forThis).val();
+		}
+		var val=[a,ba,c,d,e,f,g,h,k];
+		atr(val);
+	}	
+}	
+</script>

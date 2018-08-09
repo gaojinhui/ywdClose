@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.config.js"></script>
+	<script type="text/javascript" charset="utf-8" src="__UE__ueditor.all.min.js"> </script>
+	<script type="text/javascript" charset="utf-8" src="__UE__lang/zh-cn/zh-cn.js"></script>
+</head>
+<body class="winui-window-body">
+<form class="layui-form" action="{:url('/manage/user_contorller/email_fan')}" enctype="multipart/form-data" method="post" style="margin-top: 20px;">
+	<!-- <div class="layui-form-item">
+		<label class="layui-form-label">用户名</label>
+		<div class="layui-input-block">
+			<input type="text" name="username"   lay-verify="required" placeholder="请输入用户|名字母和英文" disabled autocomplete="off" class="layui-input" value="{$info.nickName}">
+		</div>
+	</div> -->
+	<div class="layui-form-item">
+			<label class="layui-form-label" style="display: block">用户测评视频</label>
+			{volist name="videoUrl" id="ty"}
+				<div class="layui-upload-drag" onclick="play(this)" id="urll" data-value="{$ty.url}">
+					<i class="layui-icon"></i>
+					<p>{$ty.title}</p>
+				</div>
+			{/volist}
+		</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">备注：</label>
+		<div class="layui-input-block">
+			<input type="text" name="remarks"  placeholder="用户上传视频不合格的情况下输入备注信息返给用户"  class="layui-input" value="">
+		</div>
+	</div>
+	<input type="hidden" value="{$id}" name="uid" id="lay_upload" >
+	<input type="hidden" value="{$title}" name="title" id="lay_upload" >
+	<input type="hidden" value="{$openid}" name="openid" id="lay_upload" >
+	<input type="hidden" value="{$btime}" name="btime" id="lay_upload" >
+	<div id="standard">
+		<div class="layui-form-item" >
+			<label class="layui-form-label" style="display: block">标准图片</label>
+			<div class="site-demo-upload">
+				<div class="layui-upload-drag" id="test1">
+					<i class="layui-icon"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="" name="litpic1[]" id="litpic1"/>
+				<img id="litpica1" style="width: 300px; height: 135px; display: none;  margin-top: -60px;" src=""/>
+				<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="addstandard()" style="margin-left: 46px;margin-bottom: -50px;">增加标准图片</a>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">用户反馈</label>
+			<div class="layui-input-block">
+				<script id="editor" name="editorValue" type="text/plain" class="layui-form-item">{$info.description|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div id="userlitpic">
+		<div class="layui-form-item">
+			<label class="layui-form-label" style="display: block">用户图片</label>
+			<div class="site-demo-up">
+				<div class="layui-upload-drag" id="test200">
+					<i class="layui-icon"></i>
+					<p>点击上传，或将文件拖拽到此处</p>
+				</div>
+				<input type="hidden" value="" name="litpic200[]" id="litpic200" />
+				<img id="litpicb200" style="width: 300px; height: 135px; display: none;  margin-top: -60px;" src=""/>
+				<a class="layui-btn layui-btn-xs" href="javascript:;" onclick="adduserlitpic()" style="margin-left: 46px;margin-bottom: -50px;">增加用户图片</a>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-form-item">
+			<label class="layui-form-label">反馈总结</label>
+			<div class="layui-input-block">
+				<script id="editor1" name="summary" type="text/plain" class="layui-form-item">{$info.description|default=''}</script>
+			</div>
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<div class="layui-input-block">
+
+			<button class="layui-btn" lay-submit="" lay-filter="addNews">立即提交</button>
+			<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+	    </div>
+	</div>
+</form>
+<script type="text/javascript" src="__LAY__layui.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/fan_email.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/emailVideo.js"></script>
+</body>
+</html>
+<script>
+var ue = UE.getEditor('editor',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+var ue = UE.getEditor('editor1',{initialFrameWidth:"90.8%",initialFrameHeight:300});
+function play(forThis){
+	var url=$(forThis).attr('data-value');
+	var loadstr='<video width="100%" height="100%"  controls="controls" autobuffer="autobuffer"  autoplay="autoplay" loop="loop" style="position:fixed!important;top:0;left:0;"><source src="'+url+'"></source></video>';
+		/*$('.layer-demolist').on('click', function(){*/
+		
+			layer.open({
+			  type:1,
+			  title: true,
+			  area: ['730px', '420px'],
+			  shade: 0,
+			  closeBtn: 1,
+			  content: loadstr,
+			});
+		/*})*/
+	}
+
+
+</script>

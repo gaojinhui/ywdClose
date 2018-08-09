@@ -1,0 +1,38 @@
+.type{overflow:hidden;}
+.type input{margin:0 5px 0 10px;height:24px;width:54px;cursor:pointer;}
+.type label{}
+.state{clear:both;overflow:hidden;margin-top:20px;}
+.state label{float:left;width:120px;text-align:right;margin-right:5px;}
+.rzt{float:left; overflow:hidden;width:50%;}
+.hylx{float:left; overflow:hidden; width:50%;}
+.state span{float:left;height:30px; width:260px;padding-left:5px;}
+.state p{clear:both;padding-top:10px;}
+
+.table{padding-top:20px;}
+.input-item{width:50%; float:left; font-size:12px;line-height:30px;margin-bottom:25px; position:relative;}
+.input-item span{line-height:25px; position:absolute;left:125px;top:30px;}
+.input-item select{margin-right:20px;}
+.input-item .file{filter:alpha(opacity:0);}
+.input-item .upimg {display:block; background:url(../../../img/mrimg.png) no-repeat;height:150px;width:260px;clear:both;margin-left:125px;position:relative;z-index:1;}
+.input-item .upimg .txt{position:absolute; z-index:2;}
+.input-item .upimg ul{display:block;position:absolute;z-index:3;}
+
+.input-web{width:100%;}
+.nextstep{padding-left:125px;clear: both;}
+
+
+.membersinformation{height:40px;padding-left:15px;clear:both;}
+.membersinformation span{font-size:12px ;font-family:"宋体"; float:right;margin-right:15px;}
+.membersinformation span input{margin:14px 5px 0 0;float:left;}
+.informations{width:100%}
+.informations .upimg{display:block; background:url(../../../img/mrimg.png) no-repeat  center;height:150px;width:260px;clear:both;margin-left:125px;}
+.yesbtn{clear:both;margin:20px 0 0 125px;}
+
+.note{padding-top:20px;}
+.note span{display:block; clear:both;margin-left:125px;}
+.map_btn {
+		  display: inline-block;
+ 		  background: url("../../../img/map_btn.png") no-repeat center;
+ 		  height: 21px;
+ 		  width: 30px;
+		}

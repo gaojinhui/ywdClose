@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>我的账户</title>
+	<link rel="stylesheet" href="__LAY__/css/layui.css" media="all" />
+	<style>
+		body{background:#FFFFFF !important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto; padding: 10px 2px 0 10px;}
+	</style>
+</head>
+<style>
+	td .layui-table-cell{height:40px;line-height:40px;}
+	td .layui-table-cell p{height:20px;line-height:20px;}
+</style>
+<body>
+<div class="mt10"></div>
+<div class="layui-tab layui-tab-brief" lay-filter="test">
+	<ul class="layui-tab-title">
+		<li class="layui-this" lay-id="1">待支付({$wait_num})</li>
+		<li lay-id="2">已支付({$finish_num})</li>
+		<li lay-id=''>全部({$apply_num})</li>
+	</ul>
+</div>
+<form class="layui-form" action="javascript:">
+<div class="demoTable" style="padding: 10px;">
+	申请日期：
+	<div class="layui-inline">
+		<input type="text" name="starttime" class="layui-input" id="starttime" placeholder="yyyy-MM-dd">
+	</div>
+	-
+	<div class="layui-inline">
+		<input class="layui-input"  name="endtime" id="endtime"  autocomplete="off" placeholder="yyyy-MM-dd">
+	</div>
+	<button class="layui-btn" lay-submit=""  lay-filter="test1">搜索</button>
+</div>
+</form>
+<table class="layui-hide" id="table_list" lay-filter="user"></table>
+
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit','element', 'laydate','table','laypage','laytpl'], function(){
+        var table = layui.table;
+        $= layui.jquery;
+    	element = layui.element;
+        laytpl = layui.laytpl;
+        laydate= layui.laydate;
+        form = layui.form;
+        obj={};
+        obj.status=1;
+        element.on('tab(test)', function(elem){
+            obj.status=$(this).attr('lay-id');
+			getpage(obj,'/user/index/handle_pay_apply');
+        });
+
+        form.on('submit(test1)', function(data){
+            if(!data.field.starttime||!data.field.endtime){layer.msg('开始时间和结束时间不能为空',{time:1000,icon:5});return false;}
+            getpage(data.field,'/user/index/handle_pay_search');
+            return false;
+        });
+
+        laydate.render({
+            elem: '#starttime'
+        });
+        laydate.render({
+            elem: '#endtime'
+        });
+
+        laytpl.toDateString = function(nS){
+            return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');
+        };
+
+        getpage(obj,'/user/index/handle_pay_apply')
+        //方法级渲染
+       function getpage(data,url) {
+           table.render({
+               elem: '#table_list'
+               ,url: url,
+               where: data,
+               method: 'post'
+               ,cols: [[
+                   {field:'apply_number', title: '支付申请号',width:170}
+                   ,{field:'payee', title: '收款人',width:85}
+                   ,{field:'paystatus_text',title: '资金科目', width:100}
+                   ,{field:'number', title: '业务编号',width:170}
+                   ,{field:'operator', title: '经办人', sort: true, width:100}
+                   ,{field:'paytime_text', title: '申请时间', sort: true, width:180}
+                   ,{field:'sum', title: '金额(元)', sort: true, width:100}
+                   ,{field:'status_text', title: '状态', sort: true, width:80}
+
+               ]]
+               ,page: true,
+               done: function(res, curr, count){
+                   layer.msg("加载完毕....",{time:300});
+               },
+               text: {
+                   none: '暂时没有相关数据'
+               }
+           });
+       }
+
+
+        table.on('tool(user)', function(obj){
+            var data = obj.data;
+            if(obj.event === 'detail'){
+                layer.open({
+                    type: 2,
+					title:'合同详情',
+                    skin: 'layui-layer-demo', //样式类名
+                    closeBtn: 1, //不显示关闭按钮
+                    anim: 2,
+                    area: ['100%', '100%'],
+                    shadeClose: true, //开启遮罩关闭
+                    content: '/user/index/get_financeable_detail?id='+ data.id
+                });
+            } else if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    $.post("/manage/index/delbanner",{id:data.id},function(data){
+                        if(data.error_code==0){
+                            layer.msg("删除成功",{time:400},function(){
+                                obj.del();
+                                layer.close(index);
+                            });
+
+                        }else{
+                            layer.msg("删除失败",{time:400});
+                        }
+                    })
+
+                });
+            }
+        });
+
+
+    })
+</script>
+</body>
+</html>

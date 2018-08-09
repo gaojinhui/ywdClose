@@ -1,0 +1,50 @@
+.ct_baner{width:100%;min-width:1200px;height:114px; background:url(../img/u32.png) no-repeat center #efefef;}
+.content_jr{width:100%;min-width:1200px; padding:15px 0; overflow:hidden; background:#fff;}
+.con_a{ text-align:center;padding:60px 0;}
+.cg_jr{ width:1200px;margin:0 auto; overflow:hidden;}
+.cg_jr .left_jr{width:896px;border:1px solid #dedede;float:left; background:#fff;}
+.left_jr .title_jr{ height:77px; border-bottom:1px solid #009DD9;}
+.left_jr .title_jr li{font:18px/77px "Microsoft Yahei";color:#333; cursor:pointer; border-left:1px solid #dedede; float:left;padding:0 71px;}
+.left_jr .title_jr .first{border-left:none;}
+.left_jr .title_jr .tab{ background:#009DD9; color:#fff;}
+.con_jr .jr_god{padding:90px 40px 20px 40px; overflow:hidden;}
+.con_jr .jr_god .jr_let{width:10px;height:1070px;float:left;margin-top:20px;}
+.jr_god .jr_let ul{width:2px ;height:1070px;background:#efefef;}
+.jr_god .jr_let ul li{display:block;height:6px ;width:6px; background:url(../img/u46.png) no-repeat center; position:relative;left:-2px;}
+.jr_god .jr_let ul .ks01{top:0}
+.jr_god .jr_let ul .ks02{top:170px}
+.jr_god .jr_let ul .ks03{top:350px}
+.jr_god .jr_let ul .ks04{top:620px}
+.jr_god .jr_let ul .ks05{top:1040px}
+.jr_god .right_news{float:right;width:768px;margin-left:30px;}
+.jr_god .right_news li{font:16px/40px "Microsoft Yahei";margin-bottom:30px;clear:both; overflow:hidden;}
+.jr_god .right_news li span{color:#009DD9;}
+.jr_god .right_news li a{color:#009DD9; text-decoration:underline;}
+.jr_god .right_news li h1{margin-bottom:30px;font-size:18px;}
+.jr_god .right_news li p{color:#666;}
+.jr_god .right_news li p h6{color:#666;}
+.jr_god .right_news li .cpt_01{float:left; height:180px;width:127px; padding:20px 5px 10px 5px; border:1px solid #dedede; border-top:1px solid #009DD9; background:#FCFCFC; border-radius:0 0 10px 010px;-moz-border-radius:0 0 10px 010px;-ms-border-radius:0 0 10px 010px;-webkit-border-radius:0 0 10px 010px;-o-border-radius:0 0 10px 010px; margin-left:15px; text-align:center;}
+.jr_god .right_news li .first0{margin-left:0;}
+.jr_god .right_news li .cpt_01 p{ text-align:left;}
+.jr_god .right_news li .cpt_01 p{ font-size:13px;}
+.jr_god .right_news li .Rzlc{margin-bottom:20px;}
+
+
+.botm-jr{ border:1px solid #009DD9; background:#F9FEFF; clear:both;padding:10px;line-height:40px;margin-top:30px;}
+.botm-jr .tit_jr_01{ padding-left:20px; background:url(../img/u78.png) no-repeat left; font-size:18px;}
+.botm-jr .conjr01 i{ font-style:normal;margin-left:25px}
+.botm-jr .P_h{margin-left:65px}
+
+.cg_jr .right_jr{width:288px;float:right; background:#fff;font:14px/30px "Microsoft Yahei";}
+.cg_jr .right_t01{height:470px;border:1px solid #dedede; border-top:2px solid #009DD9;padding:10px;}
+.cg_jr .right_t01 p a{color:#FF6633}
+.cg_jr .right_t01 li{line-height:20px; overflow:hidden;}
+.cg_jr .right_t01 li input{height:20px;padding:5px; width:250px;border:1px solid #dedede;font:14px/20px "Microsoft Yahei"; color:#999;margin-top:15px;}
+.cg_jr .right_t01 li .yzm01{width:150px;float:left;}
+.cg_jr .right_t01 li .yzm02{width:100px; float:left;height:32px;border-left:none;}
+.btn_jr{clear:both;margin-top:30px;}
+.btn_jr input{width:262px; height:35px; background:#FF6633; color:#fff;font:16px/35px "Microsoft Yahei"; text-align:center; border:none; border-radius:5px;-moz-border-radius:5px;-ms-border-radius:5px;-webkit-border-radius:5px;}
+
+.phont_numb{border:1px solid #42AFDF; margin-top:15px; padding:15px 10px 15px 65px;font:14px/35px "Microsoft Yahei"; background:url(../img/dh_tb01.png) no-repeat 10px center;}
+.phont_numb div{font-size:16px; color:#009DD9}
+.dz_jr{border:1px solid #42AFDF;margin-top:15px; padding:15px;font:14px/35px "Microsoft Yahei";}

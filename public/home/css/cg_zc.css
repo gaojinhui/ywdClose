@@ -1,0 +1,76 @@
+.cg_banner{height:114px; width:100%;}
+.content_cg{width:100%; overflow:hidden;padding:15px 0; background:#efefef;}
+.cgzc{width:1200px; margin:0 auto; overflow:hidden;background:#fff;}
+.cgzc .tit_th{height:60px; text-align:center; font:20px/60px "Microsoft Yahei";color:#fff; background:#3399CC;}
+.cgzc .tit_th span{font:14px/60px "Microsoft Yahei";float:right;padding-right:30px;}
+.cgzc table{ border:1px solid #dedede; border-top:none; }
+.cgzc table td{border-bottom:1px solid #dedede;font:14px/30px "Microsoft Yahei";color:#666;padding:25px 0;}
+.cgzc table .cg_title{border-right:1px solid #dedede; width:160px;font:bold 18px/60px "Microsoft Yahei";color:#3399CC;}
+.cgzc table .cgcp_name{font:16px/30px "Microsoft Yahei"; color:#666;padding-left:20px;}
+.cgzc table td h1{font-weight:bold;}
+.cgzc table .jg_cg span{font:36px/60px "Microsoft Yahei"; color:#FF6600;margin-right:20px;}
+.cgzc table .jg_cg p{font:20px/60px "Microsoft Yahei";color:#FF6600;}
+.cgzc table .cgcp_name .btm_cg span{margin-right:50px;}
+.cgzc table .cgcp_name .btm_cg span label{color:#FF6600;}
+.cgzc table .btm_cg .lf_ks01{display:inline-block;width:120px;}
+.cgzc table .btm_cg .lf_ks02{display:inline-block;width:350px}
+/*.cgzc table td{font:14px/30px "Microsoft Yahei"; color:#666;}
+.cgzc table td label{color:#FF6600;}
+.cgzc table .lft{padding-left:20px;}
+.cgzc table .jg_cg{font:14px/60px "Microsoft Yahei";}
+.cgzc table .jg_cg span{font:36px/60px "Microsoft Yahei"; color:#FF6600;margin-right:20px;}*/
+
+.bg_color{background-color:#f6f6f6;}
+.Demand_list_qt{width:100%; background:#efefef;}
+.Demand_list_qtcon{ width:1200px; overflow:hidden; margin:20px auto 10px auto;}
+
+.Demand_list_leftqt{float:left; width:890px;}
+.Demand_lefttit{ background:#fff; border:1px solid #dedede; padding:10px;hieght:32px;font:14px/30px "Microsoft Yahei";}
+.Demand_lefttit span select{width:165px;padding:5px; border:1px solid #dedede;color:#999;margin-right:8px;}
+.Demand_lefttit span .desired_btn{height:30px;width:70px; text-align:center; background:#efefef; border:1px solid #dedede; color:#333;outline:medium; cursor:pointer;}
+.Demand_lefttit font{float:right;font-size:12px;color:#999;margin-right:15px;}
+
+.Dema01_list{overflow:hidden;  font:14px/30px "Microsoft Yahei";margin-top:10px;padding:10px;}
+.Dema01_list ul li{ overflow:hidden; clear:both;padding:31px;height:130px; border:1px solid #dedede;color:#666;margin-bottom:10px;background:#fff;}
+.Dema01_list ul li i{font-style:normal;}
+.Dema_name_time{ overflow:hidden;}
+.Dema01_list ul li .Dema_name_time h1{float:left; font:bold 20px/30px "Microsoft Yahei";}
+.Dema01_list ul li .Dema_name_time h1 font{padding:0 5px;}
+.Dema01_list ul li .Dema_name_time span{float:right;line-height:24px;}
+.Dema01_list ul li .Dema_name_time span i{display:inline-block; height:24px;width:24px;margin:0 5px;text-align:center; border:1px solid #dedede;color:#FF6633; }
+
+.Dema01_list ul li .Dema01_cont{padding-top:10px; overflow:hidden;}
+.Dema01_list ul li .Dema01_cont .Dema_kstd1{float:left;width:600px;}
+.Dema01_list ul li .Dema01_cont .Dema_kstd1 span{display:inline-block;width:290px;}
+.Dema01_list ul li .Dema01_cont .Dema_kstd1 label{color:#999;}
+.Dema01_list ul li .Dema01_cont .Dbj_btn{float:right;padding-top:15px; text-align:center; font-size:16px;}
+.Dema01_list ul li .Dema01_cont .Dbj_btn p i{font-size:20px;color:#FF6633;margin:0 5px;}
+.Dema01_list ul li .Dema01_cont .Dbj_btn .baojiao_btn{ border:none; height:36px; width:120px; text-align:center; background:#FF6633; color:#fff;margin-top:5px;font:14px/30px "Microsoft Yahei"; border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-webkit-border-radius:3px;outline:medium; cursor:pointer;}
+
+.ckgd_M{text-align:center;}
+.ckgd_M a{font:14px/30px "Microsoft Yahei";display:inline-block; text-align:center; color:#0099bc; width:400px; background:#fff; border:1px solid #dedede;}
+
+
+.Demand_list_rightqt{float:right; width:296px;font:14px/30px "Microsoft Yahei";}
+.Quick_goos{ overflow:hidden;}
+.Quick_goos .Quickgoos_tit{ background:url(../img/zhaohuo_tb.png) no-repeat 90px center #0099bc; padding-left:30px;color:#fff;font-size:18px; text-align:center;height:53px;line-height:53px;}
+.Quick_goos .Quickgoos_cont{padding:15px; border:1px solid #dedede; background:#fff; border-top:none;}
+.Quick_goos .Quickgoos_cont .textarea_mf{height:207px;padding:5px; overflow:hidden; background:#efefef; border:1px solid #dedede;color:#999; word-break:break-all;}
+.Quick_goos .Quickgoos_cont div label{display:inline-block;width:80px;float:left;}
+.Quick_goos .Quickgoos_cont .lx_number{margin-top:15px; overflow:hidden;}
+.Quick_goos .Quickgoos_cont .lx_number input{height:24px;padding:2px 5px; border:1px solid #dedede; width:172px; background:#fff;float:left;}
+.Quick_goos .Quickgoos_cont .yzm_q{margin-top:10px;clear:both;overflow:hidden;}
+.Quick_goos .Quickgoos_cont .yzm_q input{height:24px;padding:2px 5px; border:1px solid #dedede; background:#fff;float:left;}
+.Quick_goos .Quickgoos_cont .yzm_q .yzm_q01{width:100px;}
+.Quick_goos .Quickgoos_cont .yzm_q .yzm_q02{width:72px;font-size:13px;height:30px; border-left:none; background:#efefef; outline:medium; cursor:pointer;}
+.Quick_goos .Quickgoos_cont .help_btn1 {clear:both;margin-top:10px; text-align:center;}
+.Quick_goos .Quickgoos_cont .help_btn1 input{height:45px; border:none; background:#32C5F0; color:#fff;font:18px/45px "Microsoft Yahei"; text-align:center;width:270px; border-radius:3px;-moz-border-radius:3px;-ms-border-radius:3px;-webkit-border-radius:3px;outline:medium; cursor:pointer;}
+
+.Record01{ overflow:hidden; margin-top:10px;border:1px solid #dedede; border-top:2px solid #0099bc; background:#fff;}
+.Record01 .Record_tit{height:49px;border-bottom:1px solid #dedede;text-align:center;font:18px/50px "Microsoft Yahei";color:#666;}
+.Record01 .Record_cont{ overflow:hidden;}
+.Record01 .Record_cont li{ overflow:hidden; clear:both; border-bottom:1px solid #dedede; padding:10px 15px;}
+.Record01 .Record_cont li p{ word-break:break-all;line-height:20px;}
+.Record01 .Record_cont li p font{color:#0099bc;margin-right:5px;}
+.Record01 .Record_cont li p i{font-style:normal;color:#FF6633;margin:0 5px;}
+.Record01 .Record_cont li span{float:right;font-size:12px; color:#999;}

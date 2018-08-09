@@ -1,0 +1,1211 @@
+---------------------------------------------------------------
+[ 2018-08-03T11:23:21+08:00 ] 127.0.0.1 GET /favicon.ico
+[ info ] www.ywdceshi.com/favicon.ico [运行时间：0.358470s][吞吐率：2.79req/s] [内存消耗：1,166.48kb] [文件加载：45]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T11:23:39+08:00 ] 127.0.0.1 GET /manage/login/showlogin
+[ info ] www.ywdceshi.com/manage/login/showlogin [运行时间：0.127580s][吞吐率：7.84req/s] [内存消耗：1,392.25kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'login',
+    2 => 'showlogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Login->showlogin[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Login.php ]
+[ info ] [ VIEW ] ./Template/manage\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T11:23:44+08:00 ] 127.0.0.1 POST /manage/login/login/login
+[ info ] www.ywdceshi.com/manage/login/login/login [运行时间：0.124185s][吞吐率：8.05req/s] [内存消耗：2,149.82kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ywdceshi.com',
+  'accept' => '*/*',
+  'content-length' => '42',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'userpwd' => '2018@nidayeshiw0O',
+)
+[ info ] [ RUN ] app\manage\controller\Login->login[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003372s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_user` [ RunTime:0.031231s ]
+[ sql ] [ SQL ] SELECT `uid`,`username`,`loginname`,`phone`,`role_id`,`create_date`,`user_type`,`user_key`,`is_del`,`status`,`ip`,`login_time`,`login_address`,`role`,`group_id` FROM `guard_user` WHERE  `username` = 'admin'  AND `password` = '4a141bb343e6b88eccbbf437141d67bb'  AND `role_id` = 2 LIMIT 1 [ RunTime:0.001891s ]
+---------------------------------------------------------------
+[ 2018-08-03T11:23:46+08:00 ] 127.0.0.1 GET /manage/index/index
+[ info ] www.ywdceshi.com/manage/index/index [运行时间：0.087419s][吞吐率：11.44req/s] [内存消耗：1,513.72kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ei70hmqosv6nqfj2v53sq4s983',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->index[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ VIEW ] ./Template/manage\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T11:23:46+08:00 ] 127.0.0.1 GET /manage/index/main
+[ info ] www.ywdceshi.com/manage/index/main [运行时间：0.083397s][吞吐率：11.99req/s] [内存消耗：2,328.64kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=ei70hmqosv6nqfj2v53sq4s983',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->main[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./Template/manage\main.html [ array (
+  0 => 'sysinfo',
+  1 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000680s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_indexdata` [ RunTime:0.028975s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_indexdata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000281s ]
+---------------------------------------------------------------
+[ 2018-08-03T11:23:46+08:00 ] 127.0.0.1 GET /manage/index/getnavs
+[ info ] www.ywdceshi.com/manage/index/getnavs [运行时间：0.069730s][吞吐率：14.34req/s] [内存消耗：2,326.02kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'getnavs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=ei70hmqosv6nqfj2v53sq4s983',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->getnavs[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.011070s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_menu` [ RunTime:0.021199s ]
+[ sql ] [ SQL ] SELECT `m`.* FROM `guard_menu` `m` WHERE  `m`.`status` = 1 ORDER BY `m`.`menuid`  asc [ RunTime:0.000749s ]
+---------------------------------------------------------------
+[ 2018-08-03T11:23:47+08:00 ] 127.0.0.1 GET /manage/index/favicon.ico
+[ info ] www.ywdceshi.com/manage/index/favicon.ico [运行时间：0.044781s][吞吐率：22.33req/s] [内存消耗：1,512.13kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'favicon.ico',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=ei70hmqosv6nqfj2v53sq4s983',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:15+08:00 ] 127.0.0.1 GET /manage/user_contorller/emailuser?ty=1
+[ info ] www.ywdceshi.com/manage/user_contorller/emailuser?ty=1 [运行时间：0.048046s][吞吐率：20.81req/s] [内存消耗：1,470.52kb] [文件加载：49]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'emailuser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'ty' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:15+08:00 ] 127.0.0.1 GET /manage/login/showlogin
+[ info ] www.ywdceshi.com/manage/login/showlogin [运行时间：0.020099s][吞吐率：49.75req/s] [内存消耗：1,393.02kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'login',
+    2 => 'showlogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\manage\controller\Login->showlogin[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Login.php ]
+[ info ] [ VIEW ] ./Template/manage\login\login.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:19+08:00 ] 127.0.0.1 POST /manage/login/login/login
+[ info ] www.ywdceshi.com/manage/login/login/login [运行时间：0.052311s][吞吐率：19.12req/s] [内存消耗：2,149.66kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'login',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://www.ywdceshi.com',
+  'accept' => '*/*',
+  'content-length' => '42',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'userpwd' => '2018@nidayeshiw0O',
+)
+[ info ] [ RUN ] app\manage\controller\Login->login[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Login.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002973s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_user` [ RunTime:0.013787s ]
+[ sql ] [ SQL ] SELECT `uid`,`username`,`loginname`,`phone`,`role_id`,`create_date`,`user_type`,`user_key`,`is_del`,`status`,`ip`,`login_time`,`login_address`,`role`,`group_id` FROM `guard_user` WHERE  `username` = 'admin'  AND `password` = '4a141bb343e6b88eccbbf437141d67bb'  AND `role_id` = 2 LIMIT 1 [ RunTime:0.000569s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:21+08:00 ] 127.0.0.1 GET /manage/index/index
+[ info ] www.ywdceshi.com/manage/index/index [运行时间：0.018647s][吞吐率：53.63req/s] [内存消耗：1,513.72kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->index[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ VIEW ] ./Template/manage\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:21+08:00 ] 127.0.0.1 GET /manage/index/main
+[ info ] www.ywdceshi.com/manage/index/main [运行时间：0.053427s][吞吐率：18.72req/s] [内存消耗：2,328.64kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->main[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./Template/manage\main.html [ array (
+  0 => 'sysinfo',
+  1 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002506s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_indexdata` [ RunTime:0.018109s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_indexdata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000333s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:21+08:00 ] 127.0.0.1 GET /manage/index/getnavs
+[ info ] www.ywdceshi.com/manage/index/getnavs [运行时间：0.040076s][吞吐率：24.95req/s] [内存消耗：2,326.02kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'getnavs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->getnavs[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002505s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_menu` [ RunTime:0.013619s ]
+[ sql ] [ SQL ] SELECT `m`.* FROM `guard_menu` `m` WHERE  `m`.`status` = 1 ORDER BY `m`.`menuid`  asc [ RunTime:0.000577s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:22+08:00 ] 127.0.0.1 GET /manage/user_contorller/emailuser?ty=1
+[ info ] www.ywdceshi.com/manage/user_contorller/emailuser?ty=1 [运行时间：0.037466s][吞吐率：26.69req/s] [内存消耗：1,521.10kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'emailuser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'ty' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->emailuser[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ VIEW ] ./Template/manage\user\emailuser.html [ array (
+  0 => 'id',
+  1 => 'type',
+  2 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:23+08:00 ] 127.0.0.1 GET /manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10
+[ info ] www.ywdceshi.com/manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10 [运行时间：0.090127s][吞吐率：11.10req/s] [内存消耗：2,023.84kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'email_user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/user_contorller/emailuser?ty=1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'type',
+  'type' => '1',
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->email_user_list[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013375s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_person` [ RunTime:0.016960s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_person` `p` INNER JOIN `guard_email` `e` ON `e`.`openid`=`p`.`openid` WHERE  `e`.`type` = '1' GROUP BY `e`.`openid` ORDER BY e.id desc LIMIT 0,10 [ RunTime:0.026320s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_email` [ RunTime:0.012402s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` `e` GROUP BY `e`.`openid` [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` WHERE  `stat` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000360s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:26+08:00 ] 127.0.0.1 GET /manage/index/index
+[ info ] www.ywdceshi.com/manage/index/index [运行时间：0.022719s][吞吐率：44.02req/s] [内存消耗：1,514.06kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->index[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ VIEW ] ./Template/manage\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:26+08:00 ] 127.0.0.1 GET /manage/index/main
+[ info ] www.ywdceshi.com/manage/index/main [运行时间：0.070211s][吞吐率：14.24req/s] [内存消耗：2,328.89kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->main[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./Template/manage\main.html [ array (
+  0 => 'sysinfo',
+  1 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012428s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_indexdata` [ RunTime:0.011810s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_indexdata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000350s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:27+08:00 ] 127.0.0.1 GET /manage/index/getnavs
+[ info ] www.ywdceshi.com/manage/index/getnavs [运行时间：0.054026s][吞吐率：18.51req/s] [内存消耗：2,326.02kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'getnavs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->getnavs[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013530s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_menu` [ RunTime:0.012615s ]
+[ sql ] [ SQL ] SELECT `m`.* FROM `guard_menu` `m` WHERE  `m`.`status` = 1 ORDER BY `m`.`menuid`  asc [ RunTime:0.000512s ]
+---------------------------------------------------------------
+[ 2018-08-03T14:42:29+08:00 ] 127.0.0.1 GET /manage/user_contorller/emailuser?ty=1
+[ info ] www.ywdceshi.com/manage/user_contorller/emailuser?ty=1 [运行时间：0.039641s][吞吐率：25.23req/s] [内存消耗：1,521.24kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'emailuser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'ty' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->emailuser[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ VIEW ] ./Template/manage\user\emailuser.html [ array (
+  0 => 'id',
+  1 => 'type',
+  2 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T14:42:29+08:00 ] 127.0.0.1 GET /manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10
+[ info ] www.ywdceshi.com/manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10 [运行时间：0.044493s][吞吐率：22.48req/s] [内存消耗：2,023.84kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'email_user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/user_contorller/emailuser?ty=1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'type',
+  'type' => '1',
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->email_user_list[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002687s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_person` [ RunTime:0.011475s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_person` `p` INNER JOIN `guard_email` `e` ON `e`.`openid`=`p`.`openid` WHERE  `e`.`type` = '1' GROUP BY `e`.`openid` ORDER BY e.id desc LIMIT 0,10 [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_email` [ RunTime:0.007227s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` `e` GROUP BY `e`.`openid` [ RunTime:0.000435s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` WHERE  `stat` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000296s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/index/index
+[ info ] www.ywdceshi.com/manage/index/index [运行时间：0.023170s][吞吐率：43.16req/s] [内存消耗：1,514.10kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->index[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ VIEW ] ./Template/manage\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/index/main
+[ info ] www.ywdceshi.com/manage/index/main [运行时间：0.051699s][吞吐率：19.34req/s] [内存消耗：2,328.90kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->main[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./Template/manage\main.html [ array (
+  0 => 'sysinfo',
+  1 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002898s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_indexdata` [ RunTime:0.014609s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_indexdata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000295s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/user_contorller/emailuser?ty=1
+[ info ] www.ywdceshi.com/manage/user_contorller/emailuser?ty=1 [运行时间：0.020513s][吞吐率：48.75req/s] [内存消耗：1,521.21kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'emailuser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'ty' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->emailuser[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ VIEW ] ./Template/manage\user\emailuser.html [ array (
+  0 => 'id',
+  1 => 'type',
+  2 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10
+[ info ] www.ywdceshi.com/manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10 [运行时间：0.084073s][吞吐率：11.89req/s] [内存消耗：2,023.84kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'email_user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/user_contorller/emailuser?ty=1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'type',
+  'type' => '1',
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->email_user_list[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013387s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_person` [ RunTime:0.025056s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_person` `p` INNER JOIN `guard_email` `e` ON `e`.`openid`=`p`.`openid` WHERE  `e`.`type` = '1' GROUP BY `e`.`openid` ORDER BY e.id desc LIMIT 0,10 [ RunTime:0.000973s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_email` [ RunTime:0.017573s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` `e` GROUP BY `e`.`openid` [ RunTime:0.000419s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` WHERE  `stat` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000291s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/index/index
+[ info ] www.ywdceshi.com/manage/index/index [运行时间：0.017328s][吞吐率：57.71req/s] [内存消耗：1,514.06kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/login/showlogin',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->index[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ VIEW ] ./Template/manage\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T15:04:50+08:00 ] 127.0.0.1 GET /manage/index/main
+[ info ] www.ywdceshi.com/manage/index/main [运行时间：0.047971s][吞吐率：20.85req/s] [内存消耗：2,328.89kb] [文件加载：58]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'main',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->main[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] ./Template/manage\main.html [ array (
+  0 => 'sysinfo',
+  1 => 'result',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002909s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_indexdata` [ RunTime:0.015443s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_indexdata` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000363s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:51+08:00 ] 127.0.0.1 GET /manage/index/getnavs
+[ info ] www.ywdceshi.com/manage/index/getnavs [运行时间：0.081991s][吞吐率：12.20req/s] [内存消耗：2,326.02kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'getnavs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->getnavs[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.014366s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_menu` [ RunTime:0.012514s ]
+[ sql ] [ SQL ] SELECT `m`.* FROM `guard_menu` `m` WHERE  `m`.`status` = 1 ORDER BY `m`.`menuid`  asc [ RunTime:0.001031s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:51+08:00 ] 127.0.0.1 GET /manage/index/getnavs
+[ info ] www.ywdceshi.com/manage/index/getnavs [运行时间：0.057282s][吞吐率：17.46req/s] [内存消耗：2,326.02kb] [文件加载：53]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'index',
+    2 => 'getnavs',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\Index->getnavs[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002664s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_menu` [ RunTime:0.006167s ]
+[ sql ] [ SQL ] SELECT `m`.* FROM `guard_menu` `m` WHERE  `m`.`status` = 1 ORDER BY `m`.`menuid`  asc [ RunTime:0.000539s ]
+---------------------------------------------------------------
+[ 2018-08-03T15:04:51+08:00 ] 127.0.0.1 GET /manage/user_contorller/emailuser?ty=1
+[ info ] www.ywdceshi.com/manage/user_contorller/emailuser?ty=1 [运行时间：0.021391s][吞吐率：46.75req/s] [内存消耗：1,521.24kb] [文件加载：52]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'emailuser',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/index/index',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'ty' => '1',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->emailuser[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ VIEW ] ./Template/manage\user\emailuser.html [ array (
+  0 => 'id',
+  1 => 'type',
+  2 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2018-08-03T15:04:52+08:00 ] 127.0.0.1 GET /manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10
+[ info ] www.ywdceshi.com/manage/user_contorller/email_user_list?id=type&type=1&page=1&limit=10 [运行时间：0.072551s][吞吐率：13.78req/s] [内存消耗：2,023.84kb] [文件加载：51]
+[ info ] [ LANG ] D:\phpstudy2018\PHPTutorial\WWW\ywdClose\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'manage',
+    1 => 'user_contorller',
+    2 => 'email_user_list',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'thinkphp_show_page_trace=0|0; PHPSESSID=aaps4dc1qv9cd6kaabibaa5jg6',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://www.ywdceshi.com/manage/user_contorller/emailuser?ty=1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'close',
+  'host' => 'www.ywdceshi.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => 'type',
+  'type' => '1',
+  'page' => '1',
+  'limit' => '10',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'expire' => 604800,
+  'auto_start' => true,
+)
+[ info ] [ RUN ] app\manage\controller\UserContorller->email_user_list[ D:\phpstudy2018\PHPTutorial\WWW\ywdClose\application\manage\controller\UserContorller.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012002s ] mysql:host=127.0.0.1;port=3306;dbname=ywdClose;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_person` [ RunTime:0.022860s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_person` `p` INNER JOIN `guard_email` `e` ON `e`.`openid`=`p`.`openid` WHERE  `e`.`type` = '1' GROUP BY `e`.`openid` ORDER BY e.id desc LIMIT 0,10 [ RunTime:0.000764s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `guard_email` [ RunTime:0.014133s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` `e` GROUP BY `e`.`openid` [ RunTime:0.000412s ]
+[ sql ] [ SQL ] SELECT * FROM `guard_email` WHERE  `stat` = 1 ORDER BY id desc LIMIT 1 [ RunTime:0.000284s ]

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>我的账户</title>
+    <link rel="stylesheet" href="/public/home/css/user.css" />
+    <link href="__USER__/css/home.css" rel="stylesheet" type="text/css" />
+    <link href="__USER__/css/usercommon.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="__LAY__/css/layui.css" media="all" />
+
+    <link href="__USER__/css/YLPopDiv.css" rel="stylesheet" type="text/css" />
+    <link href="__USER__/css/common.css" rel="stylesheet" type="text/css" />
+    <style>
+        .topnav a i{width:15px; height:15px; margin-right:5px; vertical-align: middle;}
+        .topnav label a{color:#16cbc0!important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto;}
+    </style>
+</head>
+<body>
+<input type="hidden" id="customerKey" value="2524" />
+{include file="user/top" /}
+<!--logo-nav-seach-->
+<div class="mt10"></div>
+<div class="user" style="padding-top: 120px;">
+    {include file="user/left" /}
+    <div class="center" style="background: #FFFfff">
+        <div class="dbsx">
+            <iframe src="/user/index/index" name="iframe_a" frameborder="0" width="1008" height="800"></iframe>
+        </div>
+    </div>
+</div>
+<script src="__LAY__/layui.js" charset="utf-8"></script>
+<script src="__USER__/js/show_left.js"></script>
+<script>
+
+
+</script>
+</body>
+</html>

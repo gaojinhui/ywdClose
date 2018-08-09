@@ -1,0 +1,63 @@
+body{ font:12px/1.8 Verdana, Geneva, sans-serif;}
+a{ color:#333;}
+a:hover{ color:#0099CB;}
+/*公用样式*/
+.header{height:30px;width:100%; min-width:1200px;background:#282828;color:#ccc; font:12px/30px "Microsoft YaHei","微软雅黑";}
+.topmessage{width:1200px;height:30px; margin:0 auto;}
+.topmessage .left_t{float:left}
+.topmessage .right_r{float:right;}
+.topmessage .left_t span{margin-right:20px;}
+.topmessage .right_r a{color:#ccc;padding:0 10px;}
+.topmessage .right_r a:hover{color:#fff;}
+.topmessage .right_r span{margin:0 3px;}
+.topmessage i{font:14px/30px "Microsoft YaHei","微软雅黑";color: #ff7e26;}
+/*top-logo开始*/
+.top_logo{width:1200px; height:90px; margin:0 auto;}
+.logo{float:left; margin-top:15px;}
+.logo a{display:block;height:58px;width:370px;}
+.phone{float:right;height:46px;width:140px;padding-left:40px;color:#FF7200;font:16px/24px "Microsoft Yahei";margin-top:15px;}
+.phone i{font:16px/24px "Microsoft Yahei";font-style: italic; color:#FF7200;}
+.phone span{display:block;}
+/*top-logo结束*/
+/*nave开始*/
+.nav{height:45px; width:100%;min-width:1200px;}
+.nav dl{width:1200px; margin:0 auto;font-family:"Microsoft YaHei";}
+
+.nav dl dt{ float:left; width:100px; text-align:center;  font-size:18px; display:block;line-height:42px;}
+.nav dl dt a { color:#333;background:#fff; line-height:42px;display:block;}
+.nav dl dd{ float:left; width:100px; text-align:center;position: relative;  font-size:18px;}
+.nav dl dd a { color:#333;line-height:42px;display:block;text-decoration: none;}
+.nav dl dt a:hover{ float:left;width:100px; background:#0099CB;text-align:center;color:#fff;}
+.nav dl dd a:hover{ float:left;width:100px; background:#0099CB;text-align:center;color:#fff;}
+.nav dl dd ul{ width:100px;background:#fff;position:absolute;top: 40px;left: 0;z-index:999;display:none;}
+.nav dl dd:hover ul{display:block;}
+.nav dl dd ul li{height:30px ;font:14px/30px "Microsoft YaHei","微软雅黑";border-bottom:1px solid #0099cb;}
+.nav dl dd ul li a{color:#333;}
+.nav dl dd ul li:hover{background:#0099cb;}
+.nav dl dd ul li:hover a{color:#fff;}
+.nav dl dt.cur{color:#fff; background:#0099CB;line-height:42px; }
+.nav dl dt.cur a {color:#fff; background:#0099CB;}
+.nav dl dt.cur:hover{color:#fff; background:#0099CB;}
+.nav dl dd.cur{color:#fff; background:#0099CB;line-height:42px; }
+.nav dl dd.cur a {color:#fff; background:#0099CB;}
+.nav dl dd.cur:hover{color:#fff; background:#0099CB;}
+/*nave结束*/
+
+
+
+/*底部导航、版权信息开始*/
+.foot{width:100%;height:225px;clear:both; overflow:hidden; background:#3E3E3E;}
+.foot_nav{width:1200px; margin:0 auto;margin-top:20px;}
+.guidance{float:left;width:130px;height:160px;margin-right:140px;padding-top:20px;font:16px/40px "Microsoft YaHei"; color:#fff;padding-left:60px;}
+
+.guidance a{display:block;height:24px;font:14px/30px "Microsoft YaHei"; color:#aaa;}
+.guidance a:hover{ color:#fff;}
+.kufw{width:140px;margin-right:0;}
+.kufw a{display:block;}
+.kufw span{color:#ccc;font:14px/30px "Microsoft YaHei";}
+.kufw i{display:block; color:#0099CB;font-size:16px; font-weight:bold;}
+					
+.bottom{width:100%;height:90px; text-align:center;padding-top:15px; background:#000; color:#ccc; font:12px/30px "Microsoft YaHei","微软雅黑";}
+.bottom span{display:block; text-align:center;}
+.copyright{ margin:auto;width:1200px; line-height:22px; padding-top:10px; color:#777; text-align:center;}
+/*底部导航、版权信息结束*/

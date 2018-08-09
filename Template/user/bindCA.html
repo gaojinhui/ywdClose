@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://e.hncitc.com/myaccount.do -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>豫煤交易-我的账户</title>
+	<link rel="stylesheet" href="/public/home/css/user.css" />
+	<link href="__USER__/css/home.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="__LAY__/css/layui.css" media="all" />
+	<style type="text/css">
+		.icon_pull_down {
+			display: inline-block;
+			zoom: 1;
+			width: 12px;
+			height: 10px;
+			background: url(/plugins/core/stand/img/icon_pull_down.png) 0 5px no-repeat transparent;
+			overflow: hidden;
+			cursor: pointer;
+		}
+	</style>
+	<link href="__USER__/css/YLPopDiv.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/common.css" rel="stylesheet" type="text/css" />
+	<style>
+		.topnav a i{width:15px; height:15px; margin-right:5px; vertical-align: middle;}
+		.topnav label a{color:#16cbc0!important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto;}
+	</style>
+</head>
+<body>
+<input type="hidden" id="customerKey" value="2524" />
+{include file="user/top" /}
+<!--logo-nav-seach-->
+<div class="mt10"></div>
+<div class="user">
+	<!--左侧开始--> {include file="user/left" /}
+	<!--右侧主界面-->
+	<!--右侧主界面-->
+	<div class="center">
+		<div class="dbsx">
+			<div class="title">
+				账户安全
+			</div>
+			<div class="con">
+				<div style="width: 100%; padding-bottom: 10px; border-bottom: 1px solid #cccccc; margin-top:10px;">
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">绑定状态:</label>
+						<div class="layui-input-inline">
+							<input type="text" lay-verify="bind" value="" autocomplete="off" placeholder="" class="layui-input" disabled="" style="background: #FFFfee" />
+						</div>
+					</div>
+				</div>
+				<form class="layui-form" action="javascript:">
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">驱动下载:</label>
+						<label class="layui-form-label" style=" margin-left: -40px;">点击下载驱动</label>
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">证书key号:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="key" lay-verify="title" autocomplete="off" placeholder="" class="layui-input" disabled="" />
+						</div>
+						<div class="" style=" margin-top: -40px; margin-left: 200px;">
+							<button class="layui-btn layui-btn-danger" onclick="layui.getkey(this)" lay-filter="getkey">读取CA证书</button>
+						</div>
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">手机号码:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="phone" lay-verify="title" value="" autocomplete="off" placeholder="请输入标题" class="layui-input" disabled="" />
+						</div>
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">企业名称:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="company" lay-verify="title" autocomplete="off" value="" placeholder="请输入标题" class="layui-input" disabled="" />
+						</div>
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 0">
+						<label class="layui-form-label">验证码:</label>
+						<div class="layui-input-inline">
+							<input type="text" name="code" lay-verify="title" autocomplete="off" placeholder="请输入标题" class="layui-input" />
+							<div class="layui-form-mid layui-word-aux" style=" margin-top: -40px; margin-left: 200px;">
+								<img src="{:captcha_src()}" onclick="this.src='{:captcha_src()}?x='+Math.random();" />
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item" style="margin-bottom: 0; margin-left: 200px;">
+						<button class="layui-btn layui-btn-danger" lay-submit="" lay-filter="tijiao">绑定</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div> {include file="user/bottom"}
+<script src="__LAY__/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate;
+        //监听提交
+        form.on('submit(tijiao)', function(data){
+
+            $.post("{:url('home/ucenter/author')}",data.field,function(data){
+                if(data.code==1){
+                    layer.msg('绑定成功', {icon: 1},function(){
+                        window.location.reload();
+                    });
+                }else{
+                    layer.msg(data.msg);
+                }
+            })
+            return false;
+        });
+
+
+    }).define(['layer','jquery'],function(exports){
+        function randomWord(randomFlag, min, max){
+            var str = "",
+                range = min,
+                arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+
+            // 随机产生
+            if(randomFlag){
+                range = Math.round(Math.random() * (max-min)) + min;
+            }
+            for(var i=0; i<range; i++){
+                pos = Math.round(Math.random() * (arr.length-1));
+                str += arr[pos];
+            }
+            return str;
+        }
+        $= layui.jquery;
+        exports('getkey', function(e){
+                layer.confirm('您是否已经插入了设备?', {
+                    btn: ['已插入','取消'] //按钮
+                }, function(){
+                    $("[name='key']").val(randomWord(false,43));
+                    layer.msg('读取成功', {icon: 1});
+                    $(e).attr("disabled",true);
+                });
+
+            }
+
+        );
+    });
+</script>
+</body>
+</html>

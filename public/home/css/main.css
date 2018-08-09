@@ -1,0 +1,667 @@
+body {
+    font: 14px/1.8 "Microsoft Yahei", Verdana, Geneva, sans-serif;
+}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldser,input,textarea,p,blockquote,tbody,th,td {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #6C6C6C;
+}
+
+a:hover {
+    color: #FE721A;
+    text-decoration: underline;
+}
+
+.top_mt {
+    height: 30px;
+}
+
+.topmessage {
+    width: 1200px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.topmessage div {
+    float: left;
+    height: 30px;
+}
+
+.time {
+    margin-left: 25px;
+}
+
+.time span {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.topnav {
+    margin-left: 35px;
+}
+
+.topnav a {
+    padding: 0 5px;
+}
+
+.topnav span {
+    margin: 0 3px;
+}
+
+.topnav span i {
+    overflow: hidden;
+    font-size: 16px;
+
+}
+
+.topmessage .exit {
+    float: right;
+    cursor: pointer;
+    width: 45px;
+}
+/*logonavsearch*/
+.logo_nav {
+    width: 100%;
+    height: 100px;
+    min-width: 1200px
+}
+
+.logo_center {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 58px;
+    width: 390px;
+    padding-top: 18px;
+    float: left;
+}
+
+.logo img,.logo span {
+    float: left;
+}
+
+.logo img:last-child {
+    margin-top: 20px;
+}
+
+.logo .logo_wztp {
+    margin-top: 20px;
+}
+
+.logo span {
+    height: 40px;
+    width: 1px;
+    margin: 9px 10px 0 10px;
+}
+
+.logo_nav ul {
+    float: left;
+    height: 24px;
+    width: 550px;
+    margin-top: 38px;
+}
+
+.logo_nav ul li {
+    width: 130px;
+    float: left;
+    text-align: center;
+    margin-left: 30px;
+}
+
+.logo_nav ul li:first-child {
+    width: 50px;
+}
+
+.logo_nav ul li span {
+    padding: 0 8px;
+    margin-left: 5px;
+}
+
+.search {
+    float: right;
+    width: 310px;
+    height: 30px;
+    margin-top: 36px;
+}
+
+.search span {
+    float: left;
+    height: 30px;
+    width: 38px;
+    text-align: right;
+    color: #cbcbcb;
+}
+
+.search .text {
+    height: 30px;
+    width: 210px;
+    border: none;
+    float: left;
+}
+
+.search .button {
+    height: 30px;
+    width: 56px;
+    text-align: center;
+    border: none;
+    float: left;
+    cursor: pointer;
+}
+/*left-nav*/
+body[data-page] .content {
+    width: 1200px;
+    overflow: hidden;
+    margin: 10px auto;
+}
+
+.left_nav_three {
+    width: 190px;
+    float: left;
+    overflow: hidden;
+    padding: 10px 0 20px 0;
+}
+
+.left_nav_three dl dt {
+    hieght: 40px;
+    padding-left: 44px;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+}
+
+.left_nav_three dd {
+    height: 25px;
+    margin-top: 10px;
+    padding-left: 44px;
+}
+
+.left_nav_three dd a {
+    display: block;
+    height: 25px;
+    width: 100%
+}
+
+.left_nav_three dd:hover a {
+}
+
+.left_nav_three dl .on_Menu {
+    text-align: left;
+    font: 800 14px/30px "Microsoft YaHei";
+    cursor: pointer;
+}
+
+.left_nav_three dl .on_Menu a {
+    display: inline-block;
+    width: 216px;
+    height: 30px;
+}
+
+.left_nav_three dl .over_Menu {
+    font: 800 14px/30px "Microsoft YaHei";
+    text-align: left;
+    cursor: pointer;
+}
+
+.left_nav_three dl .over_Menu a {
+    display: inline-block;
+    width: 130px;
+    height: 30px;
+}
+
+
+/*right_con*/
+.right_con {
+    width: 1008px;
+    background: #fff;
+    padding-bottom: 20px;
+    overflow: hidden;
+    overflow: hidden;
+    float: right;
+    min-height: 1000px;
+}
+
+.right_con .title {
+    height: 50px!important;
+    padding-left: 20px;
+    margin: auto;
+    clear: both;
+    font: 14px/48px "Microsoft YaHei";
+}
+
+.navigate1 {
+    height: 50px;
+    font: 14px/48px "Microsoft YaHei";
+    margin: auto;
+    border-bottom: 1px #CCCCCC solid;
+    text-align: left;
+}
+
+.right_con .con {
+    padding: 20px;
+    margin: auto;
+    clear: both;
+}
+
+.right_con1 {
+    width: 960px;
+    background: #fff;
+    padding-bottom: 20px;
+    overflow: hidden;
+    min-height: 1000px;
+    float: left;
+    margin-left: 20px;
+}
+
+/*foot*/
+.foot {
+    width: 100%;
+    height: 225px;
+    overflow: hidden;
+}
+
+.foot_nav {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.guidance {
+    float: left;
+    width: 130px;
+    height: 160px;
+    margin-right: 84px;
+    padding-top: 20px;
+}
+
+.service {
+    border-right: none;
+}
+
+.guidance a {
+    display: block;
+    height: 24px;
+}
+
+.service {
+    width: 160px;
+    margin-right: 10px;
+}
+
+.service a {
+    padding-left: 24px;
+}
+
+.service span {
+    height: 45px;
+}
+
+.ewm {
+    height: 155px;
+    float: right;
+    margin-top: 20px;
+}
+
+.ewm img {
+    display: block;
+}
+
+.ewm span {
+    display: block;
+    width: 97px;
+    text-align: center;
+    float: left;
+    margin: 15px 60px 0 0;
+}
+
+.bottom {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.bottom span {
+    display: block;
+    text-align: center;
+}
+
+.amount_bottom1 {
+    margin: 10px auto;
+    clear: both;
+}
+
+.amount_bottom1 a {
+    color: #444;
+}
+
+.amount_bottom1 .tit {
+    height: 40px;
+    line-height: 40px;
+    color: #444;
+    position: relative;
+}
+
+.amount_bottom1 .amount_links {
+    width: 60px;
+    position: absolute;
+    text-align: center;
+}
+
+.amount_bottom1.tab {
+    border: 1px #ddd solid;
+    background: #F7F7F7;
+    border-bottom: 1px #F7F7F7 solid;
+}
+
+.amount_bottom1 .action_other_show {
+    position: absolute;
+    left: 70px;
+}
+
+.amount_bottom1  .con {
+    height: 40px;
+    font: 12px/40px Verdana;
+    padding: 0 5px;
+    background: #F7F7F7;
+}
+
+.amount_bottom {
+    width: 900px;
+    margin: 10px auto;
+    clear: both;
+}
+
+.amount_bottom a {
+    color: #444;
+}
+
+.amount_bottom .tit {
+    height: 40px;
+    line-height: 40px;
+    color: #444;
+    position: relative;
+}
+
+.amount_bottom .amount_links {
+    width: 60px;
+    position: absolute!important;
+    text-align: center;
+    top: 1px;
+}
+
+.amount_bottom .tab {
+    border: 1px #ddd solid;
+    background: #F7F7F7;
+    border-bottom: 1px #F7F7F7 solid;
+}
+
+.amount_bottom .action_other_show {
+    position: absolute;
+    left: 70px;
+}
+
+.amount_bottom  .con {
+    border: 1px #ddd solid;
+    height: 40px;
+    font: 12px/40px Verdana;
+    padding: 0 5px;
+    background: #F7F7F7;
+}
+
+.record {
+    display: inline-block;
+}
+
+.ico_lock {
+    width: 23px;
+    height: 22px;
+    background-position: -20px -20px;
+}
+
+.ico_download {
+    width: 20px;
+    height: 15px;
+    background-position: -20px -62px;
+}
+
+.ico_count {
+    width: 18px;
+    height: 15px;
+    background-position: -20px -97px;
+}
+
+.ico_map {
+    width: 15px;
+    height: 15px;
+    background-position: -20px -132px;
+}
+
+.ico_down {
+    width: 17px;
+    height: 6px;
+    background-position: -20px -167px;
+}
+
+.ico_ykxq {
+    width: 17px;
+    height: 11px;
+    background-position: -20px -190px;
+}
+
+.search_crite {
+    padding: 10px;
+    font: 14px/30px "Microsoft Yahei";
+}
+
+.search_crite .start_time,.search_crite .end_time {
+    height: 30px;
+    width: 130px;
+}
+
+.search_crite .searchday_time a {
+    margin: 0 10px;
+}
+
+.search_crite .payment_g_searchbtn,.search_crite .payment_searchbtn {
+    width: 90px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #fff;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.search_crite .payment_g_searchbtn {
+    background: #0099CB;
+}
+
+.search_crite .payment_searchbtn {
+    background: #FF7A4D;
+}
+
+.g_searchbtn {
+    padding: 10px;
+    font: 12px/30px "Microsoft Yahei";
+}
+
+.g_search {
+    margin-bottom: 10px;
+}
+
+.g_search span {
+    margin-right: 50px;
+}
+
+.g_search .pay_text {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.g_search .pay_text,.g_searchbtn .pay_fs {
+    height: 30px;
+    width: 200px;
+    border: 1px solid #ccc;
+}
+
+.g_searchbtn .pay_fs {
+    padding: 4px 0 4px 0;
+    width: 202px;
+}
+
+.g_search .last_span {
+    margin-right: 0;
+}
+
+.contract_list_table {
+    font-size: 12px;
+}
+
+.contract_list_table th {
+    text-align: center;
+    color: #fff;
+    background: #0099CB;
+    height: 40px;
+}
+
+.contract_list_table td {
+    text-align: center;
+    color: #333;
+    border-bottom: 1px solid #efefef;
+    height: 40px;
+}
+
+.contract_list_table td a {
+    color: #0099CB;
+}
+
+.onlinepay_ht {
+    font: 14px/40px "Microsoft Yahei";
+    margin: 20px 10px 10px 10px;
+}
+
+.onlinepay_ht span {
+    font: 12px/40px "Microsoft Yahei";
+    color: #999;
+    float: right;
+}
+
+.onlinepay_htdetails,.Transaction_details {
+    padding: 10px;
+    margin: 10px;
+    background: #f2f2f2;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    font: 12px/40px "Microsoft Yahei";
+}
+
+.onlinepay_det {
+    float: left;
+    width: 316px;
+}
+
+.onlinepay_det span {
+    display: block;
+    margin-left: 20px;
+}
+
+.htdetails {
+    width: 248px;
+}
+
+.blue,.blue a:link,.blue a:visited,.blue a:active {
+    color: #0099CB;
+}
+
+.blue a:hover {
+    color: #000;
+}
+
+.Message_authentication {
+    padding: 10px;
+    font: 12px/30px "Microsoft Yahei";
+}
+
+.Message_authentication span .authentication_text {
+    height: 30px;
+    border: 1px solid #ccc;
+    width: 130px;
+    text-align: center;
+    padding-right: 30px
+}
+
+.Message_authentication span font {
+    color: #ff0000;
+}
+
+.Message_authentication .Message_bottun {
+    margin-top: 20px;
+}
+
+.Message_authentication .Message_bottun input {
+    width: 130px;
+    height: 30px;
+    font: bold 14px/30px "Microsoft Yahei";
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+
+.Message_authentication .Message_bottun .queding {
+    background: #ff7e26;
+    border: 1px solid #ff7e26;
+    color: #fff;
+    margin-right: 50px;
+}
+
+.Message_authentication .Message_bottun .fanhui {
+    background: #efefef;
+    border: 1px solid #ccc;
+    color: #999;
+    margin-right: 50px;
+}
+
+#pageTxt1 {
+    width: 50px;
+    height: 20px;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+}
+
+.page .button {
+    height: 24px;
+    width: 60px;
+}
+
+.expand {
+    border: 1px #ccc solid;
+    padding: 7px;
+    position: absolute;
+    z-index: 990;
+    top: 20px;
+    left: 0;
+    background: #fff;
+    min-width: 120px;
+    word-break: break-all;
+    white-space: normal;
+    text-align: left;
+}
+
+.expand table {
+    border: 1px #ccc solid;
+    background: #fff;
+}

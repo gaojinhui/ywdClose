@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+</head>
+<body class="winui-window-body">
+<form class="layui-form" action="{:url('index/index/editbanner_handle')}" enctype="multipart/form-data" method="post" style="margin-top: 20px;">
+	<input type="hidden" value="{$result.id}" name="id">
+	<div class="layui-form-item">
+		<label class="layui-form-label">标题</label>
+		<div class="layui-input-block">
+			<input type="text" name="title"   lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" value="{$result.title}">
+		</div>
+	</div>
+	<input type="hidden" value="{$result.pic}" name="images" id="lay_upload" >
+	<div class="layui-form-item">
+		<label class="layui-form-label">链接</label>
+		<div class="layui-input-block">
+			<input type="text" name="link"   lay-verify="required" placeholder="链接" autocomplete="off" class="layui-input" value="{$result.link}">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label" style="display: block">banner图</label>
+		<div class="site-demo-upload">
+			<div class="layui-upload-drag" id="test10" style="float:left;margin-right:20px">
+				<i class="layui-icon"></i>
+				<p>点击上传，或将文件拖拽到此处</p>
+			</div>
+			<img id="img0" src="{$result.pic}" style="width: 300px; height:150px;">
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">是否显示</label>
+		<div class="layui-input-block">
+
+			<input type="radio" name="status" value="1" title="是" {$result.status==1?'checked':''}>
+			<input type="radio" name="status" value="2" title="否" {$result.status==2?'checked':''} >
+
+		</div>
+	</div>
+
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">选择类型</label>
+		<div class="layui-input-inline">
+			<select name="cate" lay-verify="required">
+				<option value="{$result.cate}" class="layui-this">{$result.cate}</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<div class="layui-input-block">
+			<button class="layui-btn" lay-submit lay-filter="editDemo">立即提交</button>
+			<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+		</div>
+	</div>
+</form>
+
+<script type="text/javascript" src="__LAY__layui.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/banner.js"></script>
+
+</body>
+</html>

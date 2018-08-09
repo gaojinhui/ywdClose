@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>{$title|default="豫储交易"}</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="description" content="描述" />
+	<meta name="keywords" content="关键字" />
+	<link href="__CSS__/base.css" rel="stylesheet" type="text/css" />
+	<link href="__CSS__/main_index_new.css" rel="stylesheet" type="text/css" />
+	<link href="__CSS__/index_new.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="__LAY__/css/layui.css"  media="all">
+	<link type="text/css" href="__CSS__/dlgpop.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/cg_zc.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/tender.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/cg_hy.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/module.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/bid.css" rel="stylesheet" />
+	<link type="text/css" href="__CSS__/cg_jr.css" rel="stylesheet" />
+	<style>
+		.right_r a i{width:15px; height:15px; margin-right:5px; vertical-align: middle;}
+		.right_r label a{color:#16cbc0!important;font:14px/30px 'Microsoft YaHei','微软雅黑';cursor:auto;}
+	</style>
+</head>
+<body data-page="">
+<!--头部开始-->
+<div class="header">
+	<div class="topmessage">
+		<div class="left_t">
+            <span>
+            	您好！{if condition="!$Think.session.userinfo['uid']"}
+					游客
+				{else}
+				{$Think.session.userinfo['username']}
+				{/if}
+
+	           	 欢迎来到<a href="/" style="color:#fff ;padding:0 2px">豫储交易</a>
+            </span>
+			<span>交易时间：<font id="start_time">09:00</font>&nbsp;-&nbsp;<font id="end_time">17:00</font></span>
+			<span id="time"><font>已闭市</font></span>
+		</div>
+		<div class="right_r">
+			{if condition="!$Think.session.userinfo['uid']"}
+			<label><a href="/"><i><img src="__IMG__/ico1.png" width="15" height="15"></i>请登录</a></label>|
+			<label><a href="/">免费注册</a></label>|
+			{else}
+				<a href="/user/index/show_iframe">会员中心</a>|
+			{/if}
+			<a href="/">网站首页</a>|
+			<a href="/index/index/showsitemap?id=16">关于我们</a>
+			<span>服务热线：0371-55000255</span>
+		</div>
+	</div>
+</div>
+<!--头部结束-->
+<!--logo和banner-->
+<div class="top_logo">
+	<div class="logo"><a href="/"><img src="__IMG__/logo_index.png"/> </a></div>
+
+	<div class="phone">
+		<span>服务热线</span>
+		<i>400-900-9965</i>
+	</div>
+</div>
+<!--logo和banner结束-->
+<!--nav开始-->
+<div class="nav">
+	<dl>
+		<dd class="cur"><a href="/">首页</a></dd>
+		<dd style="position:relative;"><a href="/index/index/purchase">求购</a><img style="position: absolute;top:-10px;right:0;width:37px;height:19px;border:none" src="__IMG__/mt_nav_hot.png"></dd>
+		<dd><a href="/index/index/tender">招标</a></dd>
+
+		<dd><a href="/user/index/contract_contracts">合同</a></dd>
+		<dd><a href="/user/index/contract_contracts">结算</a></dd>
+
+
+		<dd><a href="/index/index/finance">金融</a></dd>
+		<dd><a href="javascript:void(0);">物流</a>
+			<ul class="xl_ul">
+				<li>
+					<a href="/">车源大厅</a>
+				</li>
+				<li>
+					<a href="/">待运大厅</a>
+				</li>
+			</ul>
+		</dd>
+		<dd><a href="/index/index/member">会员</a></dd>
+
+		<!--<dd><a href="/">商铺</a></dd>-->
+
+		<dd><a href="/index/index/news">资讯</a></dd>
+	</dl>
+</div>
+<!--nav结束 -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	var curindex =  window.sessionStorage.getItem("cur");
+	$(".nav dd").eq(curindex).addClass("cur");
+    $(".nav dd").eq(curindex).siblings().removeClass("cur");
+	$(".nav dd").click(function(){
+	    window.sessionStorage.setItem("cur",$(this).index());
+	    $(this).addClass("cur");
+	    $(this).siblings().removeClass("cur");
+	})
+</script>

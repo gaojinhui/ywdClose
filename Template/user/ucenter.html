@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)http://e.hncitc.com/myaccount.do -->
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<title>豫煤交易-我的账户</title>
+	<link rel="stylesheet" href="/public/home/css/user.css" />
+	<link href="__USER__/css/home.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/YLPopDiv.css" rel="stylesheet" type="text/css" />
+	<link type="text/css" href="__USER__/css/dlgpop.css" rel="stylesheet" />
+	<link href="__USER__/css/base.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/common.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/main.css" rel="stylesheet" type="text/css" />
+	<link href="__USER__/css/certification.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background: #ffffff">
+<!--logo-nav-seach-->
+<div class="mt10"></div>
+	<!--右侧主界面-->
+
+        <div class="base_message">
+            <div class="grzx">
+                <div class="txt_pic">
+                    <h1>基本信息</h1>
+                    <div class="mes">
+                        <p> <span style="font-weight: bold; color: red"></span> 欢迎来到会员中心！</p>
+
+                        <p>会员名称：{$result.company}</p>
+                        <p>最后登录时间：{$result.login_time|date='Y-m-d H:i',###}</p>
+                        <p>最后登录IP：{$result.ip}</p>
+                        <p>最后登录地址：{$result.login_address}</p>
+                        <p><span>会员类型：<span style="color:#0099CB">{$member_status==1?'未认证':'认证会员'} </span></span></p>
+                    </div>
+                </div>
+            </div>
+            <style type="text/css">
+                .user .center .base_message {height:296px;}
+                .cr-j{padding-left:42px;width:280px;float:left;position: relative;left:-57px;}
+                .c-j,.r-j{border:1px dashed #ccc;padding-left:15px;}
+                .c-j{margin-bottom:10px;}
+                .js-btn{float:left;margin-top:50px;}
+                .crj-btn{border:none;cursor:pointer;height:36px;width:90px;font:16px/36px "Microsoft Yahei"; text-align:center; display:block; background:#ff6600;color:#fff;}
+                .js-btn p{font:12px/24px "Microsoft Yahei";color:#999;}
+            </style>
+            <div class="rmb">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tbody>
+                    <tr>
+                        <td colspan="2"><span class="f14 fb" style="font-size:14px;margin-left:120px;">人民币</span></td>
+                    </tr>
+                    <tr>
+                        <td>资金总额：</td>
+                        <td><span class="corange fb" style="font-size:16px;">&yen;0.00</span></td>
+                    </tr>
+                    <tr>
+                        <td>冻 结：</td>
+                        <td>&yen;0.00</td>
+                    </tr>
+                    <tr>
+                        <td>可&nbsp;用：</td>
+                        <td>&yen;0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div class="cr-j">
+                                <div class="c-j">
+                                    <h1>签约银行：{$result.bank_address}</h1>
+                                    <h1>签约附属账号：{$result.bank_number}</h1>
+                                </div>
+                                <div class="r-j">
+                                    <h1>结算银行：未设置</h1>
+                                    <h1>结算银行：未设置</h1>
+                                </div>
+                            </div>
+                            <div class="js-btn">
+                                <input type="button" value="出金" onclick="javascript:(0)" class="crj-btn" />
+                                <p>(出金到结算银行)</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!--市场公告---------------------------------------------------------->
+        <style type="text/css">
+            .dbsx{overflow:hidden;width:100%; border-top:10px solid #efefef;}
+            .dbsx .title{height:30px; background:#CDF3FF; font:bold 14px/30px "微软雅黑";padding-left:20px;color:#333;}
+            .dbsx .con{padding:10px; overflow:hidden;}
+            .dbsx .con a{float:left; margin-right:20px; text-align:center;font:14px/30px "微软雅黑"; border:1px solid #ccc;border-radius:5px;width:140px;margin-bottom:10px;}
+            .dbsx .con a span{font-size:16px;font-weight:bold; color:#0099CB;}
+            .dbsx .con a:hover{ background:#FF702A; border-color:#FF702A;color:#fff;  text-decoration: none;}
+            .dbsx .con a:hover span{color:#fff;}
+            .dbsx .con .tab{ background:#FF702A; border-color:#FF702A;color:#fff;}
+            .dbsx .con .tab span{color:#fff;}
+
+            .scgg {overflow:hidden;width:100%; border-top:10px solid #efefef;}
+            .scgg .title{height:30px; background:#CDF3FF; font:bold 14px/30px "微软雅黑";padding-left:20px;color:#333;}
+            .scgg .title span{float:right;margin-right:10px;}
+            .scgg .title span a{font:12px/30px "宋体"; color:#333;}
+            .scgg .con{padding:10px;}
+            .scgg .con li{height:120px; width:100%; padding:10px; border-bottom:1px dashed #ccc;}
+            .scgg .con li img{width:200px;height:120px;float:left;margin-right:15px;}
+            .scgg .con li h1{height:30px;font:bold 14px/30px "微软雅黑";}
+            .scgg .con li h1 a{color:#666;}
+            .scgg .con li h1 span{font:12px/30px "宋体";color:#aaa;font-weight:400;margin-left:120px;}
+            .scgg .con li p{height:60px; padding-top:10px;font:12px/30px "宋体";color:#333;}
+
+        </style>
+        <div class="scgg">
+            <div class="title">
+                市场公告
+                <span><a href="#">更多&gt;&gt;</a></span>
+            </div>
+            <div class="con" id="adddatas">
+                {volist name="list" id="vo"}
+                <ul>
+                    <li> <img src="{$vo.images}" /> <h1><a href="/index/index/get_newscontent?id={$vo.id}" target="_blank"> {$vo.newsName} </a><span style="float: right; padding-right: 5%">[{$vo.newsTime|date='Y-m-d',###}]</span></h1> <p></p> </li>
+                </ul>
+               {/volist}
+            </div>
+        </div>
+        <!--市场公告-->
+        <!--操作区域------------------------------------------------------------------------------------------>
+
+<!--右侧主界面-->
+
+<link href="__CSS__/main_index.css" rel="stylesheet" type="text/css" />
+<!--底部通条 购物车 系统消息 返回顶部 结束--->
+<!--<div class="none black_overlay" id="overlayTipInfo" style="height: 958px; width: 1920px; display: none"></div>-->
+<div class="pop1" style=" display: none">
+	<div class="title">
+		<ul>
+			<li class="tab">提示信息</li>
+		</ul>
+		<span><a href="javascript:void(0);" id="alert-close">X</a></span>
+	</div>
+	<div class="con">
+		<p></p>
+		<ul class="tc" style="color:#777;line-height: 25px; padding-left: 40px;">
+			<li style="color:#777; text-align: left;">请进行<a href="" style="color: blue;font-size:14px; cursor: pointer;">账户认证&gt;&gt;</a></li>
+			<li style="text-align: left;">认证通过后，您将具有豫煤交易平台的交易权限。</li>
+		</ul>
+		<p></p>
+		<p class="tc"> <input type="button" id="alert-button" value="确认" class="btnhr30" size="" /></p>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,127 @@
+{include file="index/header" /}
+<div class="cgzc">
+	<div class="Demand_list_leftqt">
+		<form id="search" name="search" method="post">
+			<!--搜索条件开始-->
+			<div class="Demand_lefttit">
+        <span>
+          <select name="paraMap.WARE_KEY" id="search_paraMap_WARE_KEY">
+            <option value="">煤种：全部</option></select>
+          <select name="paraMap.DWRZ" id="search_paraMap_DWRZ"></select>
+          <select name="paraMap.JH_PROVINCE" id="paraMap_JH_PROVINCE">
+            <option value="">交货地：全部</option></select>
+          <input type="button" value="搜索" class="desired_btn" onclick="loadData();"></span>
+				<font>共找到
+					<span id="total_num">1</span>个商品</font></div>
+			<!--搜索条件结束-->
+			<input type="hidden" name="pageSize" value="10" id="pageSize">
+			<input type="hidden" id="currentPage" value="1" name="currentPage"></form>
+		<!--需求列表开始-->
+		<div class="Dema01_list" id="demandIndexData">
+			<ul>
+				{volist  name="ubuy" id="vo" empty="暂时没有数据" }
+				<li>
+					<div class="Dema_name_time">
+						<h1>
+							<font>{$vo.title}</font></h1>
+						<span>距结束：
+              <i id="days2">{$vo.day}</i>天
+						</span></div>
+					<div class="Dema01_cont">
+						<div class="Dema_kstd1">
+							<h2>
+								<label>公司名称：</label>{$vo.company}</h2>
+							<div>
+                <span>
+                  <label>报价截止：</label>{$vo.endtime|date='Y-m-d',###}</span>
+								<span>
+                  <label>交货地点：</label>{$vo.address}</span></div>
+							<div>
+                <span>
+                  <label>发布时间：</label>{$vo.starttime|date='Y-m-d',###}</span>
+								<span>
+                  <label>参&nbsp;&nbsp;考&nbsp;&nbsp;价：</label>{$vo.price} 元/百卡.吨</span></div>
+						</div>
+						<div class="Dbj_btn">
+							<p>已有
+								<i>{$vo.count}家</i>报价</p>
+							{if condition="!$Think.session.userinfo['uid']"}
+							<input type="button" value="登陆之后报价" onclick="layui.login();" class="baojiao_btn"></div>
+							{else /}
+							<input type="button" value="报价" onclick="layui.addseller({$vo.id},{$vo.uid});" class="baojiao_btn"></div>
+							{/if}
+					</div>
+				</li>
+				{/volist}
+
+			</ul>
+
+		</div>
+		<!--需求列表结束--></div>
+	<div class="Demand_list_rightqt">
+		<!--快速找货开始-->
+		<div class="Quick_goos">
+			<div class="Quickgoos_tit">快速找货</div>
+			<div class="Quickgoos_cont">
+				<form id="fastBuyGoods" name="fastBuyGoods" method="post">
+					<input type="hidden" name="paraMap.ADD_NAME" value="" id="paraMap_ADD_NAME">
+					<input type="hidden" name="paraMap.REAL_NEED" value="" id="h_paraMap_REAL_NEED">
+					<div contenteditable="true" class="textarea_mf" id="paraMap_REAL_NEED" onfocus="infoIsFocus('paraMap_REAL_NEED','Y');" onblur="infoIsFocus('paraMap_REAL_NEED','N');" defalutvalue="请录入您的真实需求（煤种、煤质和需求数量）">请录入您的真实需求（煤种、煤质和需求数量）</div>
+					<div class="lx_number">
+						<label>联系电话：</label>
+						<input type="text" value="" id="LINK_TEL" name="paraMap.LINK_TEL"></div>
+					<div class="yzm_q">
+						<label>验证码：</label>
+						<input type="text" id="mask" value="" class="yzm_q01">
+
+					<div class="help_btn1">
+						<input type="button" id="sendMaskBtn" value="帮我找" disable="disable" onclick="checkMask();"></div>
+				</form>
+			</div>
+		</div>
+		<!--快速找货结束-->
+		<!--成交记录开始-->
+		<div class="Record01">
+			<div class="Record_tit">成交记录</div>
+			<div class="Record_cont" id="record_cont" style="height:405px; overflow:hidden;">
+				<ul></ul>
+			</div>
+		</div>
+		<!--成交记录结束--></div>
+</div>
+</div>
+{include file="index/bottom"; /}
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','table','laypage'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate,
+            table = layui.table;
+        laypage = layui.laypage;
+        $ =layui.jquery;
+        //监听提交
+
+    }).define(function(exports){
+        exports('addseller', function(e,f){
+            layer.open({
+                type: 2,
+                title:'我要报价',
+                skin: 'layui-layer-lan',
+                skin: 'layui-layer-rim', //加上边框
+                area: ['40%', '50%']//宽高
+                ,anim:2,
+                maxmin: true,
+                content: '/index/index/showprice?uid='+f+'&tid='+e
+
+            });
+        });
+        exports('login', function(){
+            window.sessionStorage.clear();
+			window.location.href="/";
+        });
+    });
+</script>
+</body>
+</html>

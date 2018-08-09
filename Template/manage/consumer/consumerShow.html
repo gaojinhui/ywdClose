@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>图片总数--layui后台管理模板</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="__LAY__css/layui.css" media="all" />
+</head>
+<body class="winui-window-body">
+<form class="layui-form" action="{:url('index/index/addbanner_handle')}" enctype="multipart/form-data" method="post" style="margin-top: 20px;">
+	<div class="layui-form-item">
+		<label class="layui-form-label">用户名</label>
+		<div class="layui-input-block">
+			<input type="text" name="username"   lay-verify="required" placeholder="请输入用户|名字母和英文" disabled autocomplete="off" class="layui-input" value="{$info.username}">
+		</div>
+	</div>
+	<input type="hidden" value="" name="images" id="lay_upload" >
+	<div class="layui-form-item">
+		<label class="layui-form-label">手机号</label>
+		<div class="layui-input-block">
+			<input type="text" name="phone"   lay-verify="required" placeholder="手机号" autocomplete="off" disabled class="layui-input" value="{$info.phone}">
+		</div>
+	</div>
+
+	<div class="layui-form-item">
+		<label class="layui-form-label">人员角色</label>
+		<div class="layui-input-block">
+			<input type="radio" name="role" value="1" title="总管理" checked>
+			<input type="radio" name="role" value="2" title="客服" >
+			<input type="radio" name="role" value="3" title="讲师" >
+		</div>
+	</div>
+	<div class="layui-form-item">
+		<label class="layui-form-label">是否启用</label>
+		<div class="layui-input-block">
+			<input type="radio" name="status" value="1" title="是" checked>
+			<input type="radio" name="status" value="2" title="否" >
+		</div>
+	</div>
+
+
+
+
+</form>
+<script type="text/javascript" src="__LAY__layui.js"></script>
+<script type="text/javascript" src="__MANAGE__/js/admin.js"></script>
+</body>
+</html>

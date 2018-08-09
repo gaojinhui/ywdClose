@@ -1,0 +1,16 @@
+@charset "utf-8";
+.black_overlay {display:block !important;position:absolute;top:0%;left:0%;width:100%; height:100%;background-color:#CCC;-moz-opacity:0.01; opacity:.1;filter: alpha(opacity=1); z-index:1000;}
+.pop1 {min-height: 150px;border:#0099CB 1px solid; position:fixed; background:#fff;width:380px;z-index:1001;margin:auto; left:0px;right:0px;top:35%; }
+.pop1 .title{height:30px; background:#0099CB;}
+.pop1 .title li{display:block;float:left; width:90px; font:14px/30px "Microsoft YaHei","΢微软雅黑"; color:#fff; text-align:center;}
+.pop1 .title span{float:right; padding-right:10px; font:14px/30px Verdana;}
+.pop1 .title span a{color:#fff;}
+.pop1 .con{padding:3px;}
+.pop1 .con p{margin-top: 20px;text-indent:0em;text-align: center;font:15px/28px Verdana; color:#666;}
+.pop1 .con p ul li{word-break:break-all;}
+.btnhr30{outline:none;height:30px; width:120px; background:#F27800;border-cloor:none; font:800 16px/30px "Microsoft Yahei"; text-align:center; color:#fff;cursor:pointer;border:none;border-radius:5px;}
+.btnhr100{outline:none;height:30px; width:100px; background:#F27800; font:800 14px/30px Verdana; text-align:center; color:#fff; border:none; cursor:pointer; border-radius:5px;}
+.btnhh30{outline:none;height:30px; width:90px; font:800 14px/30px Verdana; text-align:center; color:#666; border:#B3B3B3 1px solid; cursor:pointer; border-radius:5px;}
+.btnhh25{outline:none;height:25px; width:100px; background:#0099CB; font:12px/25px Verdana; text-align:center; color:#666; border:#B3B3B3 1px solid; cursor:pointer; border-radius:5px;}
+.btnhr28{outline:none; height:28px; padding:0 10px; background:#ffdab5; border:1px solid #ffae5d; text-align:center; color:#000; cursor:pointer; border-radius:5px; font:12px/28px Verdana;}
+.btnhh28{outline:none; height:28px; padding:0 10px; background:#CCC; border:1px solid #B3B3B3; text-align:center; color:#000; cursor:pointer; border-radius:5px; font:12px/28px Verdana;}

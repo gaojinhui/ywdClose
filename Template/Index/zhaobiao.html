@@ -1,0 +1,291 @@
+{include file="index/header"; title=""; keywords="1212" /}
+<!--招标大厅开始-->
+<div style="padding:10px 0; overflow:hidden;">
+<div class="zbdt" style="">
+
+<!--search 开始-->
+	<form id="search" name="search" action="ziben.abage.cn/sitebid!bidHallDataUI.do" method="post">
+      <input type="hidden" name="shengangArea" id="shengangArea" value="">
+      <input type="hidden" id="toNoticeEdit" value="">
+      <input type="hidden" id="pub_key" value="">
+      <input type="hidden" name="search.OBJ_KEY" id="search_OBJ_KEY" value="">
+      <input type="hidden" name="search.VIEW_TYPE" value="A" id="VIEW_TYPE">
+      <input type="hidden" name="search.CUR_STAS" value="F" id="CUR_STAS">
+       <input type="hidden" name="currentPageBid" value="1" id="currentPageBid">
+       <input type="hidden" name="currentPage" value="1" id="currentPage">
+      <input type="hidden" id="IS_BID_PUBLISH" value="Y">
+      
+<!--招标大厅title开始-->
+    <div class="zb_con_title">
+        <ul>
+            <a href="javascript:void(0)" onClick="layui.change(this,0)" class="tab" > <li  >招标中</li></a>
+            <a href="javascript:void(0)" onClick="layui.change(this,1)"><li>开标中</li></a>
+            <a href="javascript:void(0)" onClick="layui.change(this,2)"><li>已结束</li></a>
+            <a href="javascript:void(0)" onClick="layui.change(this,3)"><li >创建时间</li></a>
+        </ul>
+
+    </div>
+<div class="pt10 pb10">
+    </div>
+	   
+	<div class="cb"></div>
+        
+        <div class="cb"></div>
+<!--    search 结束      -->
+  
+      
+	<div class="zb_con_time">
+		<!--内容 开始-->
+		<style type="text/css">
+			.left_bcon{overflow:hidden;}
+			.left_bcon .list_001{}
+			.left_bcon .list_001 h1{width:780px;color:#333;}
+			.left_bcon .list_001 p{width:780px;color:#333;}
+		</style>
+		<div class="left_bcon" style="width: 100%">
+			<div class="zb">
+				{volist name="list" id='vo'}
+							<ul>
+								<li>
+									<div class="state over_tb" style="color:#ffffff; background: #ff666a; width: 65px;">{$vo.status_text}</div>
+									<div class="bname">
+										<a href="javascript:void(0);" title="{$vo.title}" onClick="viewBId(114)">
+											{$vo.company}
+										</a>
+									</div>
+									<div class="condition">
+										<a href="javascript:void(0);" onClick="viewBId(114)">
+											<span>1 个项目</span><span>1 个标包</span>
+										</a>
+									</div>
+									<div class="btime">
+										<h1>投标时间：<span>{$vo.starttime_text} 至 {$vo.endtime_text}</span>
+										</h1>
+										<h1>开标时间：<span>{$vo.endtime_text}</span></h1>
+									</div>
+									<div class="wybm_btn">
+										<input type="button" onClick="javascript:window.location.href='/index/index/tc?id={$vo.id}'" value="查看详情" class="btn_tender">
+										<!--<input type="button" onClick="viewBId(114)" value="查看详情" class="btn_tender over_btn">-->
+									</div>
+									<!--<div class="zb_number">-->
+										<!--<span>公开招标</span>-->
+										<!--<span class="number_z"><font>4</font>家中标</span>-->
+									<!--</div>-->
+									{if condition="$vo.status eq 3"}
+									<div class="tbjs"><img src="__IMG__/zbjszhang.png" width="255" height="157" alt=""></div>
+									{/if}
+								</li>
+							</ul>
+				{/volist}
+			</div>
+			<div style="display: none" class="zb">
+				{volist name="list1" id='vo'}
+				<ul>
+					<li>
+						<div class="state over_tb" style="color:#ffffff; background: #ff666a; width: 65px;">{$vo.status_text}</div>
+						<div class="bname">
+							<a href="javascript:void(0);" title="{$vo.title}" onClick="viewBId(114)">
+								{$vo.company}
+							</a>
+						</div>
+						<div class="condition">
+							<a href="javascript:void(0);" onClick="viewBId(114)">
+								<span>1 个项目</span><span>1 个标包</span>
+							</a>
+						</div>
+						<div class="btime">
+							<h1>投标时间：<span>{$vo.starttime_text} 至 {$vo.endtime_text}</span>
+							</h1>
+							<h1>开标时间：<span>{$vo.endtime_text}</span></h1>
+						</div>
+						<div class="wybm_btn">
+							<input type="button" onClick="javascript:window.location.href='/index/index/tc?id={$vo.id}'" value="查看详情" class="btn_tender">
+							<!--<input type="button" onClick="viewBId(114)" value="查看详情" class="btn_tender over_btn">-->
+						</div>
+						<!--<div class="zb_number">-->
+						<!--<span>公开招标</span>-->
+						<!--<span class="number_z"><font>4</font>家中标</span>-->
+						<!--</div>-->
+						{if condition="$vo.status eq 3"}
+						<div class="tbjs"><img src="__IMG__/zbjszhang.png" width="255" height="157" alt=""></div>
+						{/if}
+					</li>
+				</ul>
+				{/volist}
+			</div>
+			<div style="display: none" class="zb">
+				{volist name="list2" id='vo'}
+				<ul>
+					<li>
+						<div class="state over_tb" style="color:#ffffff; background: #ff666a; width: 65px;">{$vo.status_text}</div>
+						<div class="bname">
+							<a href="javascript:void(0);" title="{$vo.title}" onClick="viewBId(114)">
+								{$vo.company}
+							</a>
+						</div>
+						<div class="condition">
+							<a href="javascript:void(0);" onClick="viewBId(114)">
+								<span>1 个项目</span><span>1 个标包</span>
+							</a>
+						</div>
+						<div class="btime">
+							<h1>投标时间：<span>{$vo.starttime_text} 至 {$vo.endtime_text}</span>
+							</h1>
+							<h1>开标时间：<span>{$vo.endtime_text}</span></h1>
+						</div>
+						<div class="wybm_btn">
+							<input type="button" onClick="javascript:window.location.href='/index/index/tc?id={$vo.id}'" value="查看详情" class="btn_tender over_btn">
+							<!--<input type="button" onClick="viewBId(114)" value="查看详情" class="btn_tender over_btn">-->
+						</div>
+						<!--<div class="zb_number">-->
+						<!--<span>公开招标</span>-->
+						<!--<span class="number_z"><font>4</font>家中标</span>-->
+						<!--</div>-->
+						{if condition="$vo.status eq 3"}
+						<div class="tbjs"><img src="__IMG__/zbjszhang.png" width="255" height="157" alt=""></div>
+						{/if}
+					</li>
+				</ul>
+				{/volist}
+			</div>
+          
+               
+  
+  
+
+ 
+ 
+ 
+
+ 
+</div>
+        <!--内容 结束-->
+        
+        <!--左边内容   补充公告-->
+         <div class="right_bcon" style="display: none">
+         	<div class="bnew_g">
+            	<div class="title">补充公告<span>
+            	<a href="ziben.abage.cn/sitebid!bidHallDataUI.do?search.VIEW_TYPE=D">更多&gt;&gt;</a>
+            	</span></div>
+                <div class="con">
+                	<ul>
+                		
+							<li>
+								<span>2016-09-05</span>
+								<!--  <a href="javascript:void(0)" onclick="details(14)" 
+								title="关于调整标包二拦标价及比价时间的公告--新乡中益发电有限公司2016年9月燃煤公开比价采购">-->
+								
+								<a href="ziben.abage.cn/home!bidDetail.do?key=14&amp;code=2" title="关于调整标包二拦标价及比价时间的公告--新乡中益发电有限公司2016年9月燃煤公开比价采购">
+									关于调整标包二拦标价及比价时间...
+								</a>
+							</li>
+						
+                		
+                	</ul>
+                </div>
+            </div>
+            
+             <!--左边内容   中标公告-->
+         	<div class="bnew_g mt16">
+            	<div class="title">中标公告<span>
+            	<a href="ziben.abage.cn/sitebid!bidHallDataUI.do?search.VIEW_TYPE=B">更多&gt;&gt;</a>
+            	</span></div>
+                <div class="con">
+                	<ul>
+                		
+							<li>
+								<span>2016-09-14</span>
+								<a href="javascript:void(0);" onClick="viewBId(119)" title="新乡中益发电有限公司2016年9月长焰煤公开采购">
+									新乡中益发电有限公司2016年...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-09-09</span>
+								<a href="javascript:void(0);" onClick="viewBId(117)" title="南阳鸭河口发电有限责任公司2016年9月燃料比价采购">
+									南阳鸭河口发电有限责任公司20...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-09-09</span>
+								<a href="javascript:void(0);" onClick="viewBId(116)" title="南阳天益发电有限责任公司2016年9月燃料招标">
+									南阳天益发电有限责任公司201...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-09-06</span>
+								<a href="javascript:void(0);" onClick="viewBId(115)" title="新乡中益发电有限公司2016年9月燃煤公开比价采购">
+									新乡中益发电有限公司2016年...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-09-02</span>
+								<a href="javascript:void(0);" onClick="viewBId(114)" title="鹤壁丰鹤发电有限责任公司2016年9月燃煤招标">
+									鹤壁丰鹤发电有限责任公司201...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-08-09</span>
+								<a href="javascript:void(0);" onClick="viewBId(109)" title="南阳鸭河口发电有限责任公司8月燃料采购招标公告">
+									南阳鸭河口发电有限责任公司8月...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-08-09</span>
+								<a href="javascript:void(0);" onClick="viewBId(108)" title="南阳天益发电有限责任公司8月燃料采购招标公告">
+									南阳天益发电有限责任公司8月燃...
+								</a>
+							</li>
+						
+							<li>
+								<span>2016-07-29</span>
+								<a href="javascript:void(0);" onClick="viewBId(104)" title="新乡中益发电有限公司2016年8月燃煤公开比价采购">
+									新乡中益发电有限公司2016年...
+								</a>
+							</li>
+						
+                	</ul>
+                </div>
+            </div>
+            
+         </div>
+     </div>
+         <!--招标大厅内容结束-->
+         
+    </form>
+
+
+
+</div>
+</div>
+<!--招标大厅结束-->
+
+{include file="index/bottom"; /}
+<script src="__LAY__layui.js"></script>
+<script>
+    layui.use(['form', 'layedit', 'laydate','table','laypage'], function(){
+        var form = layui.form
+            ,layer = layui.layer
+            ,layedit = layui.layedit
+            ,laydate = layui.laydate,
+            table = layui.table;
+        laypage = layui.laypage;
+        $ =layui.jquery;
+        //监听提交
+
+    }).define(['jquery'],function(exports){
+        $ = layui.jquery;
+        exports('change', function(e,index){
+            console.log();
+            $(e).addClass("tab");
+            $(e).siblings().removeClass("tab");
+			$(".zb").eq(index).show();
+            $(".zb").eq(index).siblings().hide();
+        });
+    });
+</script>

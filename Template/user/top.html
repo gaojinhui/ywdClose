@@ -1,0 +1,45 @@
+<div class="top_mt" style="position:fixed; margin-top: -10px;">
+	<div class="topmessage">
+		<div class="welcome" style="padding:0; line-height:30px;">
+			<div style="float:left;">
+				您好！{$Think.session.userinfo['username'] }
+			</div>
+			<a href="#" style="color:#fff ;padding:0 2px"><span style="font-weight: bold; color: red; float: left"></span></a>
+			<div style="float:left;">
+				欢迎来到
+				<a href="#" style="color:#fff ;padding:0 2px">豫储交易</a>
+			</div>
+			<div class="time">
+				交易时间：
+				<span id="start_time">09:00</span>&nbsp;-
+				<span id="end_time">17:00</span>
+				<span id="time"><font>未开市</font></span>
+			</div>
+		</div>
+		<div class="topnav" style="float:right;">
+			<a href="/">豫储首页</a>|
+
+			<a href="#">关于我们</a>
+			<span style="margin-right:15px;">服务热线：400-900-9965</span>
+			<a href="/user/index/loginout" id="loginout" style="color:#fff; font-weight:bold;display:inline-block;width:50px;" >【退出】</a>
+		</div>
+		<div class="exit"></div>
+	</div>
+</div>
+<!--top-->
+<div class="logo_nav" style="position: fixed; margin-top: 20px;">
+	<div class="logo_center">
+		<a href="/user/index/show_iframe">
+			<div class="logo" style="margin-top:0;">
+				<img src="__IMG__/logo_index1.png" />
+				<span></span>
+				<img src="__IMG__/by.png" class="logo_wztp" />
+			</div> </a>
+		<ul>
+			<li><a href="/user/index/show_iframe">首页</a></li>
+			<li class="pr" style="width:150px; text-align: left;"><a href="#">系统消息</a><span id="xtxxInfo">1</span></li>
+			<li class="pr" style="width:100px;text-align:left;margin-left:-10px;"><a href="#">在线洽谈</a></li>
+			<li class="pr" style="width:100px;text-align:left;margin-left:-10px;"><a href="#">物流</a></li>
+		</ul>
+	</div>
+</div>
